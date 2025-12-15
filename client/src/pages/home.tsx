@@ -5,7 +5,7 @@ import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { Input } from "@/components/ui/input";
 import heroImage from "@assets/generated_images/minimalist_desk_setup_with_plants.png";
 import { cn } from "@/lib/utils";
-import { NOW_ITEMS, PREVIOUSLY_ITEMS, LORE_ITEMS, WRITING_ITEMS, BOOKS } from "@/data";
+import { NOW_ITEMS, PREVIOUSLY_ITEMS, LORE_ITEMS, CLIENT_ITEMS, BOOKS } from "@/data";
 
 // --- Components ---
 
@@ -77,7 +77,7 @@ export default function Home() {
           
           <nav className="flex gap-6 text-sm underline-offset-4">
             <a href="#about" className="hover:underline decoration-1 decoration-primary/50 text-primary font-medium">ABOUT</a>
-            <a href="#writing" className="hover:underline decoration-1 decoration-primary/50 text-primary font-medium">WRITING</a>
+            <a href="#clients" className="hover:underline decoration-1 decoration-primary/50 text-primary font-medium">CLIENTS</a>
             <a href="#shelf" className="hover:underline decoration-1 decoration-primary/50 text-primary font-medium">SHELF</a>
           </nav>
         </div>
@@ -147,12 +147,12 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Right Col: Writing */}
-          <div id="writing">
-             <h2 className="text-sm font-bold tracking-wider uppercase mb-6 text-primary border-b border-primary/20 pb-2">WRITING</h2>
+          {/* Right Col: Clients */}
+          <div id="clients">
+             <h2 className="text-sm font-bold tracking-wider uppercase mb-6 text-primary border-b border-primary/20 pb-2">CLIENTS</h2>
              
              <div className="space-y-8">
-               {WRITING_ITEMS.map((item, i) => (
+               {CLIENT_ITEMS.map((item, i) => (
                  <div key={i} className="group cursor-pointer">
                    <h3 className="text-lg decoration-1 underline-offset-4 group-hover:underline text-primary mb-1">
                      {item.title}
@@ -162,7 +162,7 @@ export default function Home() {
                      <span>•</span>
                      <span>{item.year}</span>
                    </div>
-                   {i < WRITING_ITEMS.length - 1 && (
+                   {i < CLIENT_ITEMS.length - 1 && (
                      <div className="border-b border-primary/10 border-dashed mt-6 w-full" />
                    )}
                  </div>

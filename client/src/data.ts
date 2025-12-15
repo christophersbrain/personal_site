@@ -19,11 +19,11 @@ export const LORE_ITEMS = [
   "made a series of YouTube videos about Roam Research"
 ];
 
-export const WRITING_ITEMS = [
-  { title: "essays on being a dad", source: "PARAGRAPH", year: "2024" },
-  { title: "the internet is a portal", source: "MIRROR", year: "2023" },
-  { title: "the ghosts of internets past", source: "FWB", year: "2022" },
-  { title: "how i got cryptopilled", source: "MIRROR", year: "2021" }
+export const CLIENT_ITEMS = [
+  { title: "Rebranding Campaign", source: "Acme Corp", year: "2025" },
+  { title: "Digital Product Design", source: "Stark Industries", year: "2024" },
+  { title: "Social Media Strategy", source: "Wayne Enterprises", year: "2023" },
+  { title: "Community Growth", source: "Cyberdyne Systems", year: "2022" }
 ];
 
 export const BOOKS = [
