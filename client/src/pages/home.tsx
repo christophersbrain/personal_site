@@ -81,22 +81,16 @@ export default function Home() {
     });
   }, [searchQuery, filter]);
 
-  const booksByDecade = useMemo(() => {
+  const booksByYear = useMemo(() => {
     const grouped = filteredBooks.reduce((acc, book) => {
-      const year = parseInt(book.year) || 0;
-      const decade = year > 0 ? `${Math.floor(year / 10) * 10}s` : "Unknown";
-      
-      if (!acc[decade]) acc[decade] = [];
-      acc[decade].push(book);
+      const year = book.year || "Unknown";
+      if (!acc[year]) acc[year] = [];
+      acc[year].push(book);
       return acc;
     }, {} as Record<string, typeof BOOKS>);
 
-    // Sort decades descending
-    return Object.entries(grouped).sort((a, b) => {
-      if (a[0] === "Unknown") return 1;
-      if (b[0] === "Unknown") return -1;
-      return parseInt(b[0]) - parseInt(a[0]);
-    });
+    // Sort years descending
+    return Object.entries(grouped).sort((a, b) => Number(b[0]) - Number(a[0]));
   }, [filteredBooks]);
 
   return (
@@ -241,17 +235,17 @@ export default function Home() {
                  <button 
                    onClick={() => setFilter("all")}
                    className={cn(
-                     "px-3 py-1 transition-colors",
+                     "px-3 py-1 transition-colors text-[10px] tracking-widest font-bold",
                      filter === "all" ? "bg-primary text-background" : "hover:bg-primary/5 text-primary border border-primary/20"
                    )}
                  >
                    ALL
                  </button>
-                 <button className="border border-primary/20 text-primary px-3 py-1 hover:bg-primary/5 opacity-50 cursor-not-allowed">• LIFE-CHANGING</button>
+                 <button className="border border-primary/20 text-primary px-3 py-1 hover:bg-primary/5 opacity-50 cursor-not-allowed text-[10px] tracking-widest font-bold">* LIFE-CHANGING</button>
                  <button 
                    onClick={() => setFilter("liked")}
                    className={cn(
-                     "px-3 py-1 transition-colors border border-primary/20",
+                     "px-3 py-1 transition-colors border border-primary/20 text-[10px] tracking-widest font-bold",
                      filter === "liked" ? "bg-primary text-background border-primary" : "hover:bg-primary/5 text-primary"
                    )}
                  >
@@ -262,12 +256,12 @@ export default function Home() {
             </div>
 
             <TabsContent value="bookshelf" className="mt-0 space-y-16">
-              {booksByDecade.map(([decade, books]) => (
-                <div key={decade}>
+              {booksByYear.map(([year, books]) => (
+                <div key={year}>
                   <h3 className="text-lg font-bold text-primary mb-6 border-b border-primary/10 pb-2 sticky top-24 bg-background/95 backdrop-blur z-20 w-fit pr-4">
-                    {decade}
+                    {year}
                   </h3>
-                  <div className="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-7 gap-x-6 gap-y-12">
+                  <div className="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-7 gap-x-4 gap-y-8">
                     {books.map((book) => (
                       <BookCard key={book.id} book={book} />
                     ))}
@@ -275,7 +269,7 @@ export default function Home() {
                 </div>
               ))}
               
-              {booksByDecade.length === 0 && (
+              {booksByYear.length === 0 && (
                 <div className="py-20 text-center text-muted-foreground">
                   No books found matching your criteria.
                 </div>
