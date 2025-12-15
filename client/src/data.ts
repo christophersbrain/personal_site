@@ -20,10 +20,13 @@ export const LORE_ITEMS = [
 ];
 
 export const CLIENT_ITEMS = [
-  { title: "Rebranding Campaign", source: "Acme Corp", year: "2025" },
-  { title: "Digital Product Design", source: "Stark Industries", year: "2024" },
-  { title: "Social Media Strategy", source: "Wayne Enterprises", year: "2023" },
-  { title: "Community Growth", source: "Cyberdyne Systems", year: "2022" }
+  { title: "Fractional CFO", source: "Polymarket", year: "2024 - 2025" },
+  { title: "Fractional CFO", source: "Ambush", year: "2023 - Present" },
+  { title: "Ambassador", source: "Pear Protocol", year: "2025 - Present" },
+  { title: "Director, Strategic Revenue", source: "Flipside Crypto", year: "2024" },
+  { title: "Fractional CFO", source: "Coram AI", year: "2023 - 2024" },
+  { title: "Fractional CFO", source: "Black Court", year: "2022 - 2023" },
+  { title: "Head of Finance and Operations", source: "Jet Protocol", year: "2020 - 2022" }
 ];
 
 export const BOOKS = [
