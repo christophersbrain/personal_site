@@ -32,25 +32,940 @@ export const CLIENT_ITEMS = [
 ];
 
 export const BOOKS = [
-  { 
-    id: 1, 
-    title: "The Optimist", 
-    author: "Keach Hagey", 
-    subtitle: "Sam Altman, OpenAI, and the Race to Invent the Future",
-    color: "bg-blue-300",
-    description: "Chronicles Sam Altman's rise from Y Combinator wunderkind to the guy most associated with kickstarting the AI boom. What makes it work is that Hagey doesn't frame him as either Bond villain or savior, but as a prism: tilt one way and he's a techno-messiah, tilt another and he's just a Valley operator playing the game harder than anyone else. It's not worship and it's not a hit piece, more like an X-ray of someone who genuinely believes the future can be hacked into existence, even if the rest of the world isn't sure that's comforting."
+  {
+    "id": 1,
+    "title": "Billion Dollar Whale",
+    "author": "Tom Wright & Bradley Hope",
+    "year": "2018",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780316436502-L.jpg",
+    "liked": false
   },
-  { id: 2, title: "Chip War", author: "Chris Miller", subtitle: "The Fight for the World's Most Critical Technology", color: "bg-orange-100" },
-  { id: 3, title: "Everything Tuberculosis", author: "John Green", subtitle: "The History and Persistence of Our Deadliest Infection", color: "bg-yellow-200" },
-  { id: 4, title: "Leadership and Self-Deception", author: "Arbinger Institute", subtitle: "Getting Out of the Box", color: "bg-white" },
-  { id: 5, title: "The Twilight World", author: "Werner Herzog", subtitle: "", color: "bg-emerald-800 text-white" },
-  { id: 6, title: "Thinking In Systems", author: "Donella Meadows", subtitle: "", color: "bg-amber-100" },
-  { id: 7, title: "Stupid TV", author: "Alan Siegel", subtitle: "Be More Funny", color: "bg-sky-200" },
-  { id: 8, title: "No Rules Rules", author: "Reed Hastings", subtitle: "Netflix and the Culture of Reinvention", color: "bg-red-500 text-white" },
-  { id: 9, title: "We Are The Nerds", author: "Christine Lagorio-Chafkin", subtitle: "The Birth and Tumultuous Life of Reddit", color: "bg-blue-100" },
-  { id: 10, title: "Things Get Done", author: "Bent Flyvbjerg", subtitle: "The Surprising Factors Behind Great Projects", color: "bg-orange-400" },
-  { id: 11, title: "The Art of Thinking Clearly", author: "Rolf Dobelli", subtitle: "", color: "bg-stone-200" },
-  { id: 12, title: "Against Platforms", author: "Mike Pepi", subtitle: "Surviving the Digital Utopia", color: "bg-gray-800 text-white" },
-  { id: 13, title: "Outraged", author: "Ashley 'Dotty' Charles", subtitle: "Why Everyone is Shouting and No One is Talking", color: "bg-red-600 text-white" },
-  { id: 14, title: "Things Become Other Things", author: "Craig Mod", subtitle: "A Walking Memoir", color: "bg-gray-400" },
+  {
+    "id": 2,
+    "title": "The Premonition",
+    "author": "Michael Lewis",
+    "year": "2021",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780393881554-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 3,
+    "title": "Crapshoot Investing",
+    "author": "Jim McTague",
+    "year": "2011",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780137147564-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 4,
+    "title": "Dangerous Dreamers",
+    "author": "Robert Sobel",
+    "year": "1993",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780471577348-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 5,
+    "title": "The New Tycoons",
+    "author": "Jason Kelly",
+    "year": "2012",
+    "cover": "https://covers.openlibrary.org/b/isbn/9781118205464-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 6,
+    "title": "Secrets of Sand Hill Road",
+    "author": "Scott Kupor",
+    "year": "2019",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780593083581-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 7,
+    "title": "The Art of Short Selling",
+    "author": "Kathryn Staley",
+    "year": "1997",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780471146322-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 8,
+    "title": "The Caesars Palace Coup",
+    "author": "Max Frumes & Sujeet Indap",
+    "year": "2021",
+    "cover": "https://covers.openlibrary.org/b/isbn/9781635768374-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 9,
+    "title": "On the Brink",
+    "author": "Henry M. Paulson Jr.",
+    "year": "2010",
+    "cover": "https://covers.openlibrary.org/b/isbn/9781455554805-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 10,
+    "title": "Venture Deals",
+    "author": "Brad Feld & Jason Mendelson",
+    "year": "2011",
+    "cover": "https://covers.openlibrary.org/b/isbn/9781119594826-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 11,
+    "title": "On Our Own Terms",
+    "author": "Hemant Taneja & Kevin Maney",
+    "year": "2018",
+    "cover": "https://covers.openlibrary.org/b/isbn/9781260441215-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 12,
+    "title": "Fear and Loathing in Las Vegas",
+    "author": "Hunter S. Thompson",
+    "year": "1971",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780679785897-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 13,
+    "title": "For Whom the Bell Tolls",
+    "author": "Ernest Hemingway",
+    "year": "1940",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780684803357-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 14,
+    "title": "In Cold Blood",
+    "author": "Truman Capote",
+    "year": "1966",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780679745587-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 15,
+    "title": "Dress Your Family in Corduroy and Denim",
+    "author": "David Sedaris",
+    "year": "2004",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780316010795-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 16,
+    "title": "Me Talk Pretty One Day",
+    "author": "David Sedaris",
+    "year": "2000",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780316776967-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 17,
+    "title": "Brief Interviews with Hideous Men",
+    "author": "David Foster Wallace",
+    "year": "1999",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780316925198-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 18,
+    "title": "When Breath Becomes Air",
+    "author": "Paul Kalanithi",
+    "year": "2016",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780812988406-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 19,
+    "title": "Hyena",
+    "author": "Jude Angelini",
+    "year": "2015",
+    "cover": "https://covers.openlibrary.org/b/isbn/9781476789668-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 20,
+    "title": "Mating in Captivity",
+    "author": "Esther Perel",
+    "year": "2006",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780060753641-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 21,
+    "title": "This Side of Paradise",
+    "author": "F. Scott Fitzgerald",
+    "year": "1920",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780684843780-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 22,
+    "title": "Sneakonomic Growth",
+    "author": "Dylan Dittrich",
+    "year": "2021",
+    "cover": "https://covers.openlibrary.org/b/isbn/9781544522302-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 23,
+    "title": "The Creature from Jekyll Island",
+    "author": "G. Edward Griffin",
+    "year": "1994",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780912986456-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 24,
+    "title": "Meditations",
+    "author": "Marcus Aurelius",
+    "year": "180",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780140449334-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 25,
+    "title": "UnHealthcare",
+    "author": "Hemant Taneja & Stephen Klasko",
+    "year": "2020",
+    "cover": "https://covers.openlibrary.org/b/isbn/9781260441222-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 26,
+    "title": "The Old Man and the Sea",
+    "author": "Ernest Hemingway",
+    "year": "1952",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780684801223-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 27,
+    "title": "Humans of New York",
+    "author": "Brandon Stanton",
+    "year": "2013",
+    "cover": "https://covers.openlibrary.org/b/isbn/9781250038821-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 28,
+    "title": "The Stranger Beside Me",
+    "author": "Ann Rule",
+    "year": "1980",
+    "cover": "https://covers.openlibrary.org/b/isbn/9781416559597-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 29,
+    "title": "12 Rules for Life",
+    "author": "Jordan B. Peterson",
+    "year": "2018",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780345816023-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 30,
+    "title": "The MVP Machine",
+    "author": "Ben Lindbergh & Travis Sawchik",
+    "year": "2019",
+    "cover": "https://covers.openlibrary.org/b/isbn/9781541698949-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 31,
+    "title": "Guns, Germs, and Steel",
+    "author": "Jared Diamond",
+    "year": "1997",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780393317558-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 32,
+    "title": "Why We Sleep",
+    "author": "Matthew Walker",
+    "year": "2017",
+    "cover": "https://covers.openlibrary.org/b/isbn/9781501144318-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 33,
+    "title": "Finnish Spitz",
+    "author": "Juliette Cunliffe",
+    "year": "2003",
+    "cover": "https://covers.openlibrary.org/b/isbn/9781593783433-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 34,
+    "title": "Untamed",
+    "author": "Glennon Doyle",
+    "year": "2020",
+    "cover": "https://covers.openlibrary.org/b/isbn/9781984801258-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 35,
+    "title": "Red Notice",
+    "author": "Bill Browder",
+    "year": "2015",
+    "cover": "https://covers.openlibrary.org/b/isbn/9781476755748-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 36,
+    "title": "Beautiful Boy",
+    "author": "David Sheff",
+    "year": "2008",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780547203881-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 37,
+    "title": "Panic",
+    "author": "Michael Lewis",
+    "year": "2009",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780393065145-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 38,
+    "title": "Evicted",
+    "author": "Matthew Desmond",
+    "year": "2016",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780553447453-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 39,
+    "title": "Unbroken",
+    "author": "Laura Hillenbrand",
+    "year": "2010",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780812974492-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 40,
+    "title": "Bubble in the Sun",
+    "author": "Christopher Knowlton",
+    "year": "2020",
+    "cover": "https://covers.openlibrary.org/b/isbn/9781982128371-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 41,
+    "title": "Market Wizards",
+    "author": "Jack D. Schwager",
+    "year": "1989",
+    "cover": "https://covers.openlibrary.org/b/isbn/9781118273050-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 42,
+    "title": "Born a Crime",
+    "author": "Trevor Noah",
+    "year": "2016",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780399588174-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 43,
+    "title": "Free to Choose",
+    "author": "Milton & Rose Friedman",
+    "year": "1980",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780156334600-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 44,
+    "title": "Barbarians at the Gate",
+    "author": "Bryan Burrough & John Helyar",
+    "year": "1989",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780061655555-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 45,
+    "title": "The Outsiders",
+    "author": "William N. Thorndike",
+    "year": "2012",
+    "cover": "https://covers.openlibrary.org/b/isbn/9781422162675-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 46,
+    "title": "Henry V",
+    "author": "Dan Jones",
+    "year": "2024",
+    "cover": "https://covers.openlibrary.org/b/isbn/9781788546478-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 47,
+    "title": "Avenue of Mysteries",
+    "author": "John Irving",
+    "year": "2015",
+    "cover": "https://covers.openlibrary.org/b/isbn/9781451664164-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 48,
+    "title": "American Kingpin",
+    "author": "Nick Bilton",
+    "year": "2017",
+    "cover": "https://covers.openlibrary.org/b/isbn/9781591848141-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 49,
+    "title": "Beyond Order",
+    "author": "Jordan B. Peterson",
+    "year": "2021",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780593084649-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 50,
+    "title": "The (Honest) Truth About Dishonesty",
+    "author": "Dan Ariely",
+    "year": "2012",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780062183590-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 51,
+    "title": "Ten Innings at Wrigley",
+    "author": "Kevin Cook",
+    "year": "2019",
+    "cover": "https://covers.openlibrary.org/b/isbn/9781250149916-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 52,
+    "title": "Corporate Venturing",
+    "author": "Gary Dushnitsky et al.",
+    "year": "2014",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780470659748-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 53,
+    "title": "Baseball's Best Short Stories",
+    "author": "Paul Staudohar",
+    "year": "1995",
+    "cover": "https://covers.openlibrary.org/b/isbn/9781613743768-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 54,
+    "title": "The Shareholder Value Myth",
+    "author": "Lynn Stout",
+    "year": "2012",
+    "cover": "https://covers.openlibrary.org/b/isbn/9781605098135-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 55,
+    "title": "Home Game",
+    "author": "Michael Lewis",
+    "year": "2009",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780393338096-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 56,
+    "title": "The Demon-Haunted World",
+    "author": "Carl Sagan",
+    "year": "1995",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780345409461-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 57,
+    "title": "Other People's Money",
+    "author": "Charles V. Bagli",
+    "year": "2013",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780142180716-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 58,
+    "title": "The 3G Way",
+    "author": "Francisco S. Homem de Mello",
+    "year": "2014",
+    "cover": "https://covers.openlibrary.org/b/isbn/9781631950490-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 59,
+    "title": "The Four",
+    "author": "Scott Galloway",
+    "year": "2017",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780525501220-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 60,
+    "title": "Ryunosuke Akutagawa Collection",
+    "author": "Ryunosuke Akutagawa",
+    "year": "1927",
+    "cover": "https://covers.openlibrary.org/b/isbn/9784805314401-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 61,
+    "title": "Nexus",
+    "author": "Yuval Noah Harari",
+    "year": "2024",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780593732397-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 62,
+    "title": "Chokepoints",
+    "author": "Edward Fishman",
+    "year": "2025",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780593655382-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 63,
+    "title": "Leonardo Da Vinci",
+    "author": "Walter Isaacson",
+    "year": "2017",
+    "cover": "https://covers.openlibrary.org/b/isbn/9781501139154-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 64,
+    "title": "Steve Jobs",
+    "author": "Walter Isaacson",
+    "year": "2011",
+    "cover": "https://covers.openlibrary.org/b/isbn/9781451648539-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 65,
+    "title": "Einstein",
+    "author": "Walter Isaacson",
+    "year": "2007",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780743264747-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 66,
+    "title": "Benjamin Franklin",
+    "author": "Walter Isaacson",
+    "year": "2003",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780743258074-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 67,
+    "title": "The Complete Calvin and Hobbes",
+    "author": "Bill Watterson",
+    "year": "2005",
+    "cover": "https://covers.openlibrary.org/b/isbn/9781449433253-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 68,
+    "title": "The Psychedelic Experience",
+    "author": "Timothy Leary",
+    "year": "1964",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780806516523-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 69,
+    "title": "The Devil in the White City",
+    "author": "Erik Larson",
+    "year": "2003",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780375725609-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 70,
+    "title": "Other Minds",
+    "author": "Peter Godfrey-Smith",
+    "year": "2016",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780374537197-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 71,
+    "title": "Kitchen Confidential",
+    "author": "Anthony Bourdain",
+    "year": "2000",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780060899226-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 72,
+    "title": "Red Card",
+    "author": "Ken Bensinger",
+    "year": "2018",
+    "cover": "https://covers.openlibrary.org/b/isbn/9781501133909-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 73,
+    "title": "Educated",
+    "author": "Tara Westover",
+    "year": "2018",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780399590504-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 74,
+    "title": "Prisoner's Dilemma",
+    "author": "William Poundstone",
+    "year": "1992",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780385415804-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 75,
+    "title": "Janesville",
+    "author": "Amy Goldstein",
+    "year": "2017",
+    "cover": "https://covers.openlibrary.org/b/isbn/9781501102264-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 76,
+    "title": "The Spider Network",
+    "author": "David Enrich",
+    "year": "2017",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780062452986-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 77,
+    "title": "Bad Blood",
+    "author": "John Carreyrou",
+    "year": "2018",
+    "cover": "https://covers.openlibrary.org/b/isbn/9781524731656-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 78,
+    "title": "Mindset",
+    "author": "Carol S. Dweck",
+    "year": "2006",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780345472328-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 79,
+    "title": "When Things Fall Apart",
+    "author": "Pema Chödrön",
+    "year": "1996",
+    "cover": "https://covers.openlibrary.org/b/isbn/9781611803433-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 80,
+    "title": "Start Where You Are",
+    "author": "Pema Chödrön",
+    "year": "1994",
+    "cover": "https://covers.openlibrary.org/b/isbn/9781570628399-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 81,
+    "title": "The Wisdom of No Escape",
+    "author": "Pema Chödrön",
+    "year": "1991",
+    "cover": "https://covers.openlibrary.org/b/isbn/9781570628726-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 82,
+    "title": "The Road Less Traveled",
+    "author": "M. Scott Peck",
+    "year": "1978",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780743243155-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 83,
+    "title": "Perfect Love, Imperfect Relationships",
+    "author": "John Welwood",
+    "year": "2006",
+    "cover": "https://covers.openlibrary.org/b/isbn/9781590303863-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 84,
+    "title": "The Daily Stoic",
+    "author": "Ryan Holiday & Stephen Hanselman",
+    "year": "2016",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780735211735-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 85,
+    "title": "Maybe You Should Talk to Someone",
+    "author": "Lori Gottlieb",
+    "year": "2019",
+    "cover": "https://covers.openlibrary.org/b/isbn/9781328662057-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 86,
+    "title": "Churchill: Walking with Destiny",
+    "author": "Andrew Roberts",
+    "year": "2018",
+    "cover": "https://covers.openlibrary.org/b/isbn/9781101980996-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 87,
+    "title": "The Demon of Unrest",
+    "author": "Erik Larson",
+    "year": "2024",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780385348744-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 88,
+    "title": "Salt Fat Acid Heat",
+    "author": "Samin Nosrat",
+    "year": "2017",
+    "cover": "https://covers.openlibrary.org/b/isbn/9781476753836-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 89,
+    "title": "Band of Brothers",
+    "author": "Stephen E. Ambrose",
+    "year": "1992",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780743216388-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 90,
+    "title": "Thinking, Fast and Slow",
+    "author": "Daniel Kahneman",
+    "year": "2011",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780374533557-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 91,
+    "title": "Undaunted Courage",
+    "author": "Stephen E. Ambrose",
+    "year": "1996",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780684826974-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 92,
+    "title": "D-Day",
+    "author": "Stephen E. Ambrose",
+    "year": "1994",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780684801377-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 93,
+    "title": "Alexander Hamilton",
+    "author": "Ron Chernow",
+    "year": "2004",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780143034759-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 94,
+    "title": "Mr. Market Miscalculates",
+    "author": "James Grant",
+    "year": "2008",
+    "cover": "https://covers.openlibrary.org/b/isbn/9781604190083-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 95,
+    "title": "I Love Capitalism!",
+    "author": "Ken Langone",
+    "year": "2018",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780735216242-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 96,
+    "title": "Quench Your Own Thirst",
+    "author": "Jim Koch",
+    "year": "2016",
+    "cover": "https://covers.openlibrary.org/b/isbn/9781250093561-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 97,
+    "title": "Super Pumped",
+    "author": "Mike Isaac",
+    "year": "2019",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780393652246-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 98,
+    "title": "No Rules Rules",
+    "author": "Reed Hastings & Erin Meyer",
+    "year": "2020",
+    "cover": "https://covers.openlibrary.org/b/isbn/9781984877864-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 99,
+    "title": "Den of Thieves",
+    "author": "James B. Stewart",
+    "year": "1991",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780671792275-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 100,
+    "title": "The Best Way to Rob a Bank Is to Own One",
+    "author": "William K. Black",
+    "year": "2005",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780292721395-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 101,
+    "title": "Fed Up",
+    "author": "Danielle DiMartino Booth",
+    "year": "2017",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780735211650-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 102,
+    "title": "The Black Swan",
+    "author": "Nassim Nicholas Taleb",
+    "year": "2007",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780812973815-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 103,
+    "title": "Dear Chairman",
+    "author": "Jeff Gramm",
+    "year": "2016",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780062369833-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 104,
+    "title": "Common Wealth",
+    "author": "Jeffrey D. Sachs",
+    "year": "2008",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780143114871-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 105,
+    "title": "The Monster",
+    "author": "Michael W. Hudson",
+    "year": "2010",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780805090468-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 106,
+    "title": "Wherever You Go, There You Are",
+    "author": "Jon Kabat-Zinn",
+    "year": "1994",
+    "cover": "https://covers.openlibrary.org/b/isbn/9781401307783-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 107,
+    "title": "Relationships",
+    "author": "M. Scott Peck",
+    "year": "1993",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780684848587-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 108,
+    "title": "American Sniper",
+    "author": "Chris Kyle",
+    "year": "2012",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780062238863-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 109,
+    "title": "Dopamine Nation",
+    "author": "Anna Lembke",
+    "year": "2021",
+    "cover": "https://covers.openlibrary.org/b/isbn/9781524746728-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 110,
+    "title": "Killers of the Flower Moon",
+    "author": "David Grann",
+    "year": "2017",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780385534246-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 111,
+    "title": "Genesis",
+    "author": "Henry Kissinger, Eric Schmidt & Craig Mundie",
+    "year": "2024",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780316563802-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 112,
+    "title": "Yearbook",
+    "author": "Seth Rogen",
+    "year": "2021",
+    "cover": "https://covers.openlibrary.org/b/isbn/9781984825407-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 113,
+    "title": "Unfuck Yourself",
+    "author": "Gary John Bishop",
+    "year": "2017",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780062803832-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 114,
+    "title": "The Tools",
+    "author": "Phil Stutz & Barry Michels",
+    "year": "2012",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780812983043-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 115,
+    "title": "Winterdance",
+    "author": "Gary Paulsen",
+    "year": "1994",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780156001458-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 116,
+    "title": "Let My People Go Surfing",
+    "author": "Yvon Chouinard",
+    "year": "2005",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780143037835-L.jpg",
+    "liked": false
+  },
+  {
+    "id": 117,
+    "title": "The Screwtape Letters",
+    "author": "C.S. Lewis",
+    "year": "1942",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780060652937-L.jpg",
+    "liked": false
+  }
 ];

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { Link } from "wouter";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
@@ -6,57 +6,59 @@ import { Input } from "@/components/ui/input";
 import heroImage from "@assets/generated_images/minimalist_desk_setup_with_plants.png";
 import { cn } from "@/lib/utils";
 import { NOW_ITEMS, PREVIOUSLY_ITEMS, LORE_ITEMS, CLIENT_ITEMS, BOOKS } from "@/data";
+import { Heart } from "lucide-react";
 
 // --- Components ---
 
 const BookCard = ({ book }: { book: typeof BOOKS[0] }) => (
   <Dialog>
     <DialogTrigger asChild>
-      <div className={cn(
-        "aspect-[2/3] w-full cursor-pointer hover:scale-105 transition-transform duration-200 shadow-sm border border-foreground/10 p-4 flex flex-col justify-between overflow-hidden relative",
-        book.color
-      )}>
-        <div className="z-10 relative">
-          <h3 className={cn("font-bold text-lg leading-tight mb-2", book.color.includes("text-white") ? "text-white" : "text-foreground")}>
-            {book.title}
-          </h3>
-          <p className={cn("text-xs opacity-80 uppercase tracking-widest", book.color.includes("text-white") ? "text-white" : "text-foreground")}>
-            {book.author}
-          </p>
+      <div className="group relative cursor-pointer">
+        <div className="aspect-[2/3] w-full overflow-hidden bg-muted shadow-sm transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-md border border-black/5">
+          <img 
+            src={book.cover} 
+            alt={book.title} 
+            className="h-full w-full object-cover"
+            loading="lazy"
+          />
+          {/* Overlay gradient for text legibility if needed, but we rely on the cover art mostly */}
+          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors" />
+          
+          {/* Heart icon if liked */}
+          {book.liked && (
+            <div className="absolute top-2 right-2 text-red-500">
+               <Heart className="w-4 h-4 fill-current" />
+            </div>
+          )}
         </div>
-        
-        {book.subtitle && (
-           <p className={cn("text-xs leading-tight mt-4 line-clamp-4", book.color.includes("text-white") ? "text-white/90" : "text-foreground/80")}>
-             {book.subtitle}
-           </p>
-        )}
-        
-        {/* Placeholder decorative element for book spine/texture */}
-        <div className="absolute left-0 top-0 bottom-0 w-1 bg-black/5" />
       </div>
     </DialogTrigger>
     
-    <DialogContent className="sm:max-w-2xl bg-background border-none shadow-none p-0 overflow-hidden gap-0">
-      <div className="grid md:grid-cols-2 h-full">
+    <DialogContent className="sm:max-w-3xl bg-background border-none shadow-2xl p-0 overflow-hidden gap-0">
+      <div className="grid md:grid-cols-2 h-full max-h-[80vh] overflow-y-auto md:overflow-hidden">
         {/* Modal Left: Book Cover */}
-        <div className={cn("p-12 flex items-center justify-center", book.color)}>
-           <div className="aspect-[2/3] w-2/3 shadow-xl border border-black/10 flex flex-col justify-between p-6 relative bg-inherit">
-              <div>
-                <h2 className={cn("font-bold text-2xl leading-tight mb-2", book.color.includes("text-white") ? "text-white" : "text-foreground")}>{book.title}</h2>
-                <p className={cn("text-sm uppercase tracking-widest opacity-80", book.color.includes("text-white") ? "text-white" : "text-foreground")}>{book.author}</p>
-              </div>
-              <p className={cn("text-sm opacity-90", book.color.includes("text-white") ? "text-white" : "text-foreground")}>{book.subtitle}</p>
-              <div className="absolute left-0 top-0 bottom-0 w-2 bg-black/10" />
+        <div className="p-8 md:p-12 flex items-center justify-center bg-muted/30">
+           <div className="aspect-[2/3] w-2/3 shadow-2xl relative">
+              <img 
+                src={book.cover} 
+                alt={book.title} 
+                className="h-full w-full object-cover"
+              />
            </div>
         </div>
         
         {/* Modal Right: Details */}
-        <div className="p-8 md:p-12 flex flex-col bg-background">
-          <h2 className="text-xl font-bold uppercase tracking-wide text-primary mb-2">{book.title}</h2>
-          <p className="text-sm text-muted-foreground mb-8">{book.author}</p>
+        <div className="p-8 md:p-12 flex flex-col bg-background overflow-y-auto">
+          <h2 className="text-2xl font-bold uppercase tracking-wide text-primary mb-2 leading-tight">{book.title}</h2>
+          <p className="text-sm text-muted-foreground mb-6 font-medium tracking-widest uppercase">{book.author}</p>
+          <div className="w-12 h-0.5 bg-primary/20 mb-8" />
           
-          <div className="prose prose-sm prose-green max-w-none text-foreground/80 leading-relaxed font-mono">
-             <p>{book.description || "No description available for this book yet. It's on my shelf because it made an impact."}</p>
+          <div className="prose prose-sm prose-neutral max-w-none text-foreground/80 leading-relaxed font-mono">
+             <p>Published in {book.year}</p>
+             <p className="mt-4">
+               {/* Description placeholder since the TSV didn't have descriptions */}
+               "A book that has earned its place on the shelf."
+             </p>
           </div>
         </div>
       </div>
@@ -66,6 +68,30 @@ const BookCard = ({ book }: { book: typeof BOOKS[0] }) => (
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState("bookshelf");
+  const [searchQuery, setSearchQuery] = useState("");
+  const [filter, setFilter] = useState<"all" | "liked">("all");
+
+  // Filter and Group Books
+  const filteredBooks = useMemo(() => {
+    return BOOKS.filter(book => {
+      const matchesSearch = book.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
+                          book.author.toLowerCase().includes(searchQuery.toLowerCase());
+      const matchesFilter = filter === "all" ? true : book.liked;
+      return matchesSearch && matchesFilter;
+    });
+  }, [searchQuery, filter]);
+
+  const booksByYear = useMemo(() => {
+    const grouped = filteredBooks.reduce((acc, book) => {
+      const year = book.year || "Unknown";
+      if (!acc[year]) acc[year] = [];
+      acc[year].push(book);
+      return acc;
+    }, {} as Record<string, typeof BOOKS>);
+
+    // Sort years descending
+    return Object.entries(grouped).sort((a, b) => Number(b[0]) - Number(a[0]));
+  }, [filteredBooks]);
 
   return (
     <div className="min-h-screen bg-background text-foreground font-mono selection:bg-primary/20">
@@ -201,22 +227,53 @@ export default function Home() {
                <Input 
                  placeholder="Search books by title or author..." 
                  className="bg-[#F0F2EA] border-primary/20 focus-visible:ring-primary h-12 text-base font-mono placeholder:text-muted-foreground/50"
+                 value={searchQuery}
+                 onChange={(e) => setSearchQuery(e.target.value)}
                />
                <div className="flex gap-4 mt-4 text-xs font-bold tracking-wider uppercase">
                  <span className="text-muted-foreground pt-1">FILTER:</span>
-                 <button className="bg-primary text-background px-3 py-1 hover:opacity-90">ALL</button>
-                 <button className="border border-primary/20 text-primary px-3 py-1 hover:bg-primary/5">• LIFE-CHANGING</button>
-                 <button className="border border-primary/20 text-primary px-3 py-1 hover:bg-primary/5">♥ LIKED</button>
-                 <span className="ml-auto text-muted-foreground">{BOOKS.length} BOOKS</span>
+                 <button 
+                   onClick={() => setFilter("all")}
+                   className={cn(
+                     "px-3 py-1 transition-colors",
+                     filter === "all" ? "bg-primary text-background" : "hover:bg-primary/5 text-primary border border-primary/20"
+                   )}
+                 >
+                   ALL
+                 </button>
+                 <button className="border border-primary/20 text-primary px-3 py-1 hover:bg-primary/5 opacity-50 cursor-not-allowed">• LIFE-CHANGING</button>
+                 <button 
+                   onClick={() => setFilter("liked")}
+                   className={cn(
+                     "px-3 py-1 transition-colors border border-primary/20",
+                     filter === "liked" ? "bg-primary text-background border-primary" : "hover:bg-primary/5 text-primary"
+                   )}
+                 >
+                   ♥ LIKED
+                 </button>
+                 <span className="ml-auto text-muted-foreground">{filteredBooks.length} BOOKS</span>
                </div>
             </div>
 
-            <TabsContent value="bookshelf" className="mt-0">
-               <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-x-4 gap-y-8">
-                 {BOOKS.map((book) => (
-                   <BookCard key={book.id} book={book} />
-                 ))}
-               </div>
+            <TabsContent value="bookshelf" className="mt-0 space-y-16">
+              {booksByYear.map(([year, books]) => (
+                <div key={year}>
+                  <h3 className="text-lg font-bold text-primary mb-6 border-b border-primary/10 pb-2 sticky top-24 bg-background/95 backdrop-blur z-20 w-fit pr-4">
+                    {year}
+                  </h3>
+                  <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-x-6 gap-y-12">
+                    {books.map((book) => (
+                      <BookCard key={book.id} book={book} />
+                    ))}
+                  </div>
+                </div>
+              ))}
+              
+              {booksByYear.length === 0 && (
+                <div className="py-20 text-center text-muted-foreground">
+                  No books found matching your criteria.
+                </div>
+              )}
             </TabsContent>
             
             <TabsContent value="movie" className="mt-0">
