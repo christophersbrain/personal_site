@@ -155,10 +155,10 @@ export default function Home() {
                {CLIENT_ITEMS.map((item, i) => (
                  <div key={i} className="group cursor-pointer">
                    <h3 className="text-lg decoration-1 underline-offset-4 group-hover:underline text-primary mb-1">
-                     {item.title}
+                     {item.source}
                    </h3>
                    <div className="flex gap-3 text-xs text-muted-foreground uppercase tracking-wider">
-                     <span>{item.source}</span>
+                     <span>{item.title}</span>
                      <span>•</span>
                      <span>{item.year}</span>
                    </div>
