@@ -158,8 +158,8 @@ export default function Home() {
                      {item.source}
                    </h3>
                    <div className="text-xs text-muted-foreground uppercase tracking-wider flex flex-col gap-1">
-                     <span>{item.year}</span>
                      <span>{item.title}</span>
+                     <span>{item.year}</span>
                    </div>
                    {i < CLIENT_ITEMS.length - 1 && (
                      <div className="border-b border-primary/10 border-dashed mt-6 w-full" />
