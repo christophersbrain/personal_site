@@ -73,7 +73,7 @@ export default function Home() {
       {/* --- Header --- */}
       <header className="sticky top-0 z-50 w-full bg-background/95 backdrop-blur-sm pt-8 pb-4 px-6 md:px-12 flex items-start justify-between">
         <div className="flex flex-col md:flex-row md:items-baseline gap-6 md:gap-12">
-          <h1 className="text-lg font-bold tracking-tight text-primary">DREW COFFMAN</h1>
+          <h1 className="text-lg font-bold tracking-tight text-primary">CHRIS WHITE</h1>
           
           <nav className="flex gap-6 text-sm underline-offset-4">
             <a href="#about" className="hover:underline decoration-1 decoration-primary/50 text-primary font-medium">ABOUT</a>
@@ -239,7 +239,7 @@ export default function Home() {
 
       <footer className="px-6 md:px-12 py-12 border-t border-primary/10">
          <div className="flex justify-between items-center text-xs uppercase tracking-widest text-muted-foreground">
-           <span>© 2025 Drew Coffman</span>
+           <span>© 2025 Chris White</span>
            <span>Made with Replit</span>
          </div>
       </footer>
