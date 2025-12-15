@@ -25,6 +25,8 @@ export const CLIENT_ITEMS = [
   { title: "Ambassador", source: "Pear Protocol", year: "2025 - Present" },
   { title: "Director, Strategic Revenue", source: "Flipside Crypto", year: "2024" },
   { title: "Fractional CFO", source: "Coram AI", year: "2023 - 2024" },
+  { title: "Advisor", source: "Everybody Eats", year: "2023 - Present" },
+  { title: "Fractional CFO", source: "Brighter Electrical", year: "2022 - 2023" },
   { title: "Fractional CFO", source: "Black Court", year: "2022 - 2023" },
   { title: "Head of Finance and Operations", source: "Jet Protocol", year: "2020 - 2022" }
 ];
