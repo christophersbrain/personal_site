@@ -157,10 +157,9 @@ export default function Home() {
                    <h3 className="text-lg decoration-1 underline-offset-4 group-hover:underline text-primary mb-1">
                      {item.source}
                    </h3>
-                   <div className="flex gap-3 text-xs text-muted-foreground uppercase tracking-wider">
-                     <span>{item.title}</span>
-                     <span>•</span>
+                   <div className="text-xs text-muted-foreground uppercase tracking-wider flex flex-col gap-1">
                      <span>{item.year}</span>
+                     <span>{item.title}</span>
                    </div>
                    {i < CLIENT_ITEMS.length - 1 && (
                      <div className="border-b border-primary/10 border-dashed mt-6 w-full" />
