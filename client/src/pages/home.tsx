@@ -261,7 +261,7 @@ export default function Home() {
                   <h3 className="text-lg font-bold text-primary mb-6 border-b border-primary/10 pb-2 sticky top-24 bg-background/95 backdrop-blur z-20 w-fit pr-4">
                     {year}
                   </h3>
-                  <div className="grid grid-cols-3 md:grid-cols-6 lg:grid-cols-8 gap-x-6 gap-y-12">
+                  <div className="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-7 gap-x-6 gap-y-12">
                     {books.map((book) => (
                       <BookCard key={book.id} book={book} />
                     ))}
