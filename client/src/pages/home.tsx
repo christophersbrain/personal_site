@@ -192,11 +192,11 @@ export default function Home() {
                      </div>
                      
                      {item.logo && (
-                       <div className="w-24 h-24 border border-primary shrink-0 overflow-hidden">
+                       <div className="w-24 h-24 border border-primary shrink-0 overflow-hidden bg-white">
                          <img 
                            src={item.logo} 
                            alt={item.source} 
-                           className="w-full h-full object-cover"
+                           className="w-full h-full object-contain"
                          />
                        </div>
                      )}
