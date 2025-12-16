@@ -175,12 +175,12 @@ export default function Home() {
 
           {/* Right Col: Clients */}
           <div id="clients">
-             <h2 className="text-sm font-bold tracking-wider uppercase mb-6 text-primary border-b border-primary/20 pb-2">CLIENTS</h2>
+             <h2 className="text-sm font-bold tracking-wider uppercase mb-0 text-primary border-b border-primary/20 pb-2">CLIENTS</h2>
              
-             <div className="space-y-8">
+             <div className="divide-y divide-primary/10 divide-dashed">
                {CLIENT_ITEMS.map((item, i) => (
-                 <div key={i} className="group cursor-pointer">
-                   <div className="flex justify-between items-start gap-4">
+                 <div key={i} className="group cursor-pointer py-6">
+                   <div className="flex justify-between items-center gap-4">
                      <div>
                        <h3 className="text-lg decoration-1 underline-offset-4 group-hover:underline text-primary mb-1">
                          {item.source}
@@ -201,10 +201,6 @@ export default function Home() {
                        </div>
                      )}
                    </div>
-
-                   {i < CLIENT_ITEMS.length - 1 && (
-                     <div className="border-b border-primary/10 border-dashed mt-1 w-full" />
-                   )}
                  </div>
                ))}
              </div>
