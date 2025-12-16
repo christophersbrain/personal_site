@@ -192,7 +192,7 @@ export default function Home() {
                      </div>
                      
                      {item.logo && (
-                       <div className="w-16 h-16 border-2 border-primary shrink-0 overflow-hidden">
+                       <div className="w-20 h-20 border border-primary shrink-0 overflow-hidden">
                          <img 
                            src={item.logo} 
                            alt={item.source} 
