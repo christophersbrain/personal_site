@@ -192,7 +192,7 @@ export default function Home() {
                      </div>
                      
                      {item.logo && (
-                       <div className="w-20 h-20 border border-primary shrink-0 overflow-hidden">
+                       <div className="w-24 h-24 border border-primary shrink-0 overflow-hidden">
                          <img 
                            src={item.logo} 
                            alt={item.source} 
@@ -203,7 +203,7 @@ export default function Home() {
                    </div>
 
                    {i < CLIENT_ITEMS.length - 1 && (
-                     <div className="border-b border-primary/10 border-dashed mt-6 w-full" />
+                     <div className="border-b border-primary/10 border-dashed mt-1 w-full" />
                    )}
                  </div>
                ))}
