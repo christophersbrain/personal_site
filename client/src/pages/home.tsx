@@ -180,13 +180,28 @@ export default function Home() {
              <div className="space-y-8">
                {CLIENT_ITEMS.map((item, i) => (
                  <div key={i} className="group cursor-pointer">
-                   <h3 className="text-lg decoration-1 underline-offset-4 group-hover:underline text-primary mb-1">
-                     {item.source}
-                   </h3>
-                   <div className="text-xs text-muted-foreground uppercase tracking-wider flex flex-col gap-1">
-                     <span>{item.title}</span>
-                     <span>{item.year}</span>
+                   <div className="flex justify-between items-start gap-4">
+                     <div>
+                       <h3 className="text-lg decoration-1 underline-offset-4 group-hover:underline text-primary mb-1">
+                         {item.source}
+                       </h3>
+                       <div className="text-xs text-muted-foreground uppercase tracking-wider flex flex-col gap-1">
+                         <span>{item.title}</span>
+                         <span>{item.year}</span>
+                       </div>
+                     </div>
+                     
+                     {item.logo && (
+                       <div className="w-16 h-16 border-2 border-primary shrink-0 overflow-hidden">
+                         <img 
+                           src={item.logo} 
+                           alt={item.source} 
+                           className="w-full h-full object-cover"
+                         />
+                       </div>
+                     )}
                    </div>
+
                    {i < CLIENT_ITEMS.length - 1 && (
                      <div className="border-b border-primary/10 border-dashed mt-6 w-full" />
                    )}

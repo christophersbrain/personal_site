@@ -20,15 +20,15 @@ export const LORE_ITEMS = [
 ];
 
 export const CLIENT_ITEMS = [
-  { title: "Fractional CFO", source: "Polymarket", year: "2024 - 2025" },
-  { title: "Fractional CFO", source: "Ambush", year: "2023 - Present" },
-  { title: "Ambassador", source: "Pear Protocol", year: "2025 - Present" },
-  { title: "Director, Strategic Revenue", source: "Flipside Crypto", year: "2024" },
-  { title: "Fractional CFO", source: "Coram AI", year: "2023 - 2024" },
-  { title: "Advisor", source: "Everybody Eats", year: "2023 - Present" },
-  { title: "Fractional CFO", source: "Brighter Electrical", year: "2022 - 2023" },
-  { title: "Fractional CFO", source: "Black Court", year: "2022 - 2023" },
-  { title: "Head of Finance and Operations", source: "Jet Protocol", year: "2020 - 2022" }
+  { title: "Fractional CFO", source: "Polymarket", year: "2024 - 2025", logo: "/assets/logos/polymarket.png" },
+  { title: "Fractional CFO", source: "Ambush", year: "2023 - Present", logo: "/assets/logos/ambush.png" },
+  { title: "Ambassador", source: "Pear Protocol", year: "2025 - Present", logo: "/assets/logos/pear.png" },
+  { title: "Director, Strategic Revenue", source: "Flipside Crypto", year: "2024", logo: "/assets/logos/flipside.png" },
+  { title: "Fractional CFO", source: "Coram AI", year: "2023 - 2024", logo: "/assets/logos/coram.png" },
+  { title: "Advisor", source: "Everybody Eats", year: "2023 - Present", logo: null },
+  { title: "Fractional CFO", source: "Brighter Electrical", year: "2022 - 2023", logo: null },
+  { title: "Fractional CFO", source: "Black Court", year: "2022 - 2023", logo: null },
+  { title: "Head of Finance and Operations", source: "Jet Protocol", year: "2020 - 2022", logo: "/assets/logos/jet.png" }
 ];
 
 export const BOOKS = [
