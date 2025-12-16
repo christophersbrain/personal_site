@@ -192,11 +192,14 @@ export default function Home() {
                      </div>
                      
                      {item.logo && (
-                       <div className="w-24 h-24 border border-primary shrink-0 overflow-hidden bg-white">
+                       <div className="w-24 h-24 border border-primary shrink-0 overflow-hidden bg-white flex items-center justify-center">
                          <img 
                            src={item.logo} 
                            alt={item.source} 
-                           className="w-full h-full object-contain"
+                           className={cn(
+                             "w-full h-full object-contain",
+                             item.source === "Brighter Electrical" && "scale-110"
+                           )}
                          />
                        </div>
                      )}
