@@ -197,8 +197,8 @@ export default function Home() {
                            src={item.logo} 
                            alt={item.source} 
                            className={cn(
-                             "w-full h-full object-contain",
-                             item.source === "Brighter Electrical" && "scale-110"
+                             "w-full h-full",
+                             item.source === "Brighter Electrical" ? "object-cover object-center scale-[1.25]" : "object-contain"
                            )}
                          />
                        </div>
