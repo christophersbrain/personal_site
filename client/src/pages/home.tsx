@@ -198,7 +198,8 @@ export default function Home() {
                            alt={item.source} 
                            className={cn(
                              "w-full h-full",
-                             item.source === "Brighter Electrical" ? "object-cover object-center scale-[1.25]" : "object-contain"
+                             item.source === "Brighter Electrical" ? "object-cover object-center scale-[1.25]" : 
+                             item.source === "Black Court" ? "object-cover object-center scale-[1.1]" : "object-contain"
                            )}
                          />
                        </div>
