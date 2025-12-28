@@ -117,7 +117,15 @@ export default function Home() {
   const booksByDecade = useMemo(() => {
     const grouped = filteredBooks.reduce((acc, book) => {
       const year = parseInt(book.year);
-      const decade = isNaN(year) ? "Unknown" : `${Math.floor(year / 10) * 10}s`;
+      let decade = "Unknown";
+      
+      if (!isNaN(year)) {
+        if (year < 1970) {
+          decade = "0-1969";
+        } else {
+          decade = `${Math.floor(year / 10) * 10}s`;
+        }
+      }
       
       if (!acc[decade]) acc[decade] = [];
       acc[decade].push(book);
@@ -128,6 +136,8 @@ export default function Home() {
     return Object.entries(grouped).sort((a, b) => {
       if (a[0] === "Unknown") return 1;
       if (b[0] === "Unknown") return -1;
+      if (a[0] === "0-1969") return 1;
+      if (b[0] === "0-1969") return -1;
       return parseInt(b[0]) - parseInt(a[0]);
     });
   }, [filteredBooks]);
