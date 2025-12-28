@@ -37,7 +37,7 @@ export const BOOKS = [
     "title": "Billion Dollar Whale",
     "author": "Tom Wright & Bradley Hope",
     "year": "2018",
-    "cover": "https://covers.openlibrary.org/b/isbn/9780316436502-M.jpg?default=false",
+    "cover": "https://m.media-amazon.com/images/I/51D8qNnRvDL._SY445_SX342_.jpg",
     "liked": false
   },
   {
@@ -45,7 +45,7 @@ export const BOOKS = [
     "title": "The Premonition",
     "author": "Michael Lewis",
     "year": "2021",
-    "cover": "https://covers.openlibrary.org/b/isbn/9780393881554-M.jpg?default=false",
+    "cover": "https://m.media-amazon.com/images/I/71nxZ5VB0ZL._SL1500_.jpg",
     "liked": false
   },
   {
@@ -53,7 +53,7 @@ export const BOOKS = [
     "title": "Crapshoot Investing",
     "author": "Jim McTague",
     "year": "2011",
-    "cover": "https://covers.openlibrary.org/b/isbn/9780137147564-M.jpg?default=false",
+    "cover": "https://m.media-amazon.com/images/I/51w4YxTYiSL._SY445_SX342_.jpg",
     "liked": false
   },
   {
@@ -61,7 +61,7 @@ export const BOOKS = [
     "title": "Dangerous Dreamers",
     "author": "Robert Sobel",
     "year": "1993",
-    "cover": "https://covers.openlibrary.org/b/isbn/9780471577348-M.jpg?default=false",
+    "cover": "https://m.media-amazon.com/images/I/51rRZQZ7UpL._SL1500_.jpg",
     "liked": false
   },
   {
@@ -69,7 +69,7 @@ export const BOOKS = [
     "title": "The New Tycoons",
     "author": "Jason Kelly",
     "year": "2012",
-    "cover": "https://covers.openlibrary.org/b/isbn/9781118205464-M.jpg?default=false",
+    "cover": "https://m.media-amazon.com/images/I/51hQkJZqJWL._SX331_BO1,204,203,200_.jpg",
     "liked": false
   },
   {
@@ -77,7 +77,7 @@ export const BOOKS = [
     "title": "Secrets of Sand Hill Road",
     "author": "Scott Kupor",
     "year": "2019",
-    "cover": "https://covers.openlibrary.org/b/isbn/9780593083581-M.jpg?default=false",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780593083581-L.jpg",
     "liked": false
   },
   {
@@ -85,7 +85,7 @@ export const BOOKS = [
     "title": "The Art of Short Selling",
     "author": "Kathryn Staley",
     "year": "1997",
-    "cover": "https://covers.openlibrary.org/b/isbn/9780471146322-M.jpg?default=false",
+    "cover": "https://covers3.booksamillion.com/covers/bam/0/47/114/632/0471146323_b.jpg",
     "liked": false
   },
   {
@@ -93,7 +93,7 @@ export const BOOKS = [
     "title": "The Caesars Palace Coup",
     "author": "Max Frumes & Sujeet Indap",
     "year": "2021",
-    "cover": "https://covers.openlibrary.org/b/isbn/9781635768374-M.jpg?default=false",
+    "cover": "https://m.media-amazon.com/images/I/71yGcfOmJuL._SL1500_.jpg",
     "liked": false
   },
   {
@@ -101,7 +101,7 @@ export const BOOKS = [
     "title": "On the Brink",
     "author": "Henry M. Paulson Jr.",
     "year": "2010",
-    "cover": "https://covers.openlibrary.org/b/isbn/9781455554805-M.jpg?default=false",
+    "cover": "https://m.media-amazon.com/images/I/51aFyKo9xGL._SY342_.jpg",
     "liked": false
   },
   {
@@ -109,7 +109,7 @@ export const BOOKS = [
     "title": "Venture Deals",
     "author": "Brad Feld & Jason Mendelson",
     "year": "2011",
-    "cover": "https://covers.openlibrary.org/b/isbn/9781119594826-M.jpg?default=false",
+    "cover": "https://m.media-amazon.com/images/I/41qD8ZF7lxL.jpg",
     "liked": false
   },
   {
