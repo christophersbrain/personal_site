@@ -10,23 +10,49 @@ import { Heart } from "lucide-react";
 
 // --- Components ---
 
-const BookCard = ({ book }: { book: typeof BOOKS[0] }) => (
+const BookCard = ({ book }: { book: typeof BOOKS[0] }) => {
+  const [imageError, setImageError] = useState(false);
+  const [imageLoaded, setImageLoaded] = useState(false);
+
+  return (
   <Dialog>
     <DialogTrigger asChild>
       <div className="group relative cursor-pointer">
-        <div className="aspect-[2/3] w-full overflow-hidden bg-muted shadow-sm transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-md border border-black/5">
-          <img 
-            src={book.cover} 
-            alt={book.title} 
-            className="h-full w-full object-cover"
-            loading="lazy"
-          />
+        <div className="aspect-[2/3] w-full overflow-hidden bg-muted shadow-sm transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-md border border-black/5 relative">
+          
+          {/* Skeleton Loader */}
+          {!imageLoaded && !imageError && (
+             <div className="absolute inset-0 bg-muted animate-pulse flex items-center justify-center">
+                <span className="text-muted-foreground/20 text-xs">Loading...</span>
+             </div>
+          )}
+
+          {/* Fallback for Error */}
+          {imageError ? (
+            <div className="absolute inset-0 bg-muted flex flex-col items-center justify-center p-4 text-center">
+               <span className="text-xs font-bold text-muted-foreground uppercase tracking-widest line-clamp-3">{book.title}</span>
+               <span className="text-[10px] text-muted-foreground/60 mt-2 uppercase tracking-widest line-clamp-2">{book.author}</span>
+            </div>
+          ) : (
+            <img 
+              src={book.cover} 
+              alt={book.title} 
+              className={cn(
+                "h-full w-full object-cover transition-opacity duration-500",
+                imageLoaded ? "opacity-100" : "opacity-0"
+              )}
+              loading="lazy"
+              onLoad={() => setImageLoaded(true)}
+              onError={() => setImageError(true)}
+            />
+          )}
+
           {/* Overlay gradient for text legibility if needed, but we rely on the cover art mostly */}
           <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors" />
           
           {/* Heart icon if liked */}
           {book.liked && (
-            <div className="absolute top-2 right-2 text-red-500">
+            <div className="absolute top-2 right-2 text-red-500 z-10">
                <Heart className="w-4 h-4 fill-current" />
             </div>
           )}
@@ -38,12 +64,19 @@ const BookCard = ({ book }: { book: typeof BOOKS[0] }) => (
       <div className="grid md:grid-cols-2 h-full max-h-[80vh] overflow-y-auto md:overflow-hidden">
         {/* Modal Left: Book Cover */}
         <div className="p-8 md:p-12 flex items-center justify-center bg-muted/30">
-           <div className="aspect-[2/3] w-2/3 shadow-2xl relative">
-              <img 
-                src={book.cover} 
-                alt={book.title} 
-                className="h-full w-full object-cover"
-              />
+           <div className="aspect-[2/3] w-2/3 shadow-2xl relative bg-muted">
+              {imageError ? (
+                <div className="w-full h-full flex flex-col items-center justify-center p-8 text-center border border-black/5 bg-background">
+                   <h3 className="text-xl font-bold uppercase tracking-wide text-primary mb-2">{book.title}</h3>
+                   <p className="text-sm text-muted-foreground font-medium tracking-widest uppercase">{book.author}</p>
+                </div>
+              ) : (
+                <img 
+                  src={book.cover} 
+                  alt={book.title} 
+                  className="h-full w-full object-cover"
+                />
+              )}
            </div>
         </div>
         
@@ -64,7 +97,7 @@ const BookCard = ({ book }: { book: typeof BOOKS[0] }) => (
       </div>
     </DialogContent>
   </Dialog>
-);
+)};
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState("bookshelf");
