@@ -171,7 +171,7 @@ export default function Home() {
              <img 
                src={heroImage} 
                alt="Desk Setup" 
-               className="w-full h-full object-cover object-top grayscale-[20%] hover:grayscale-0 transition-all duration-700"
+               className="w-full h-full object-cover object-[center_15%] grayscale-[20%] hover:grayscale-0 transition-all duration-700"
              />
           </div>
         </section>
