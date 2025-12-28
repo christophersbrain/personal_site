@@ -81,16 +81,22 @@ export default function Home() {
     });
   }, [searchQuery, filter]);
 
-  const booksByYear = useMemo(() => {
+  const booksByDecade = useMemo(() => {
     const grouped = filteredBooks.reduce((acc, book) => {
-      const year = book.year || "Unknown";
-      if (!acc[year]) acc[year] = [];
-      acc[year].push(book);
+      const year = parseInt(book.year);
+      const decade = isNaN(year) ? "Unknown" : `${Math.floor(year / 10) * 10}s`;
+      
+      if (!acc[decade]) acc[decade] = [];
+      acc[decade].push(book);
       return acc;
     }, {} as Record<string, typeof BOOKS>);
 
-    // Sort years descending
-    return Object.entries(grouped).sort((a, b) => Number(b[0]) - Number(a[0]));
+    // Sort decades descending
+    return Object.entries(grouped).sort((a, b) => {
+      if (a[0] === "Unknown") return 1;
+      if (b[0] === "Unknown") return -1;
+      return parseInt(b[0]) - parseInt(a[0]);
+    });
   }, [filteredBooks]);
 
   return (
@@ -271,10 +277,10 @@ export default function Home() {
             </div>
 
             <TabsContent value="bookshelf" className="mt-0 space-y-16">
-              {booksByYear.map(([year, books]) => (
-                <div key={year}>
+              {booksByDecade.map(([decade, books]) => (
+                <div key={decade}>
                   <h3 className="text-lg font-bold text-primary mb-6 border-b border-primary/10 pb-2 sticky top-24 bg-background/95 backdrop-blur z-20 w-fit pr-4">
-                    {year}
+                    {decade}
                   </h3>
                   <div className="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-8 gap-x-4 gap-y-8">
                     {books.map((book) => (
@@ -284,7 +290,7 @@ export default function Home() {
                 </div>
               ))}
               
-              {booksByYear.length === 0 && (
+              {booksByDecade.length === 0 && (
                 <div className="py-20 text-center text-muted-foreground">
                   No books found matching your criteria.
                 </div>
