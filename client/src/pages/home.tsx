@@ -360,7 +360,7 @@ export default function Home() {
           <h2 className="text-lg font-bold text-primary mb-8 border-b border-primary pb-4 uppercase tracking-wider">
             PROJECTS
           </h2>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+          <div className="space-y-2">
             {[
               { title: "sample1", href: "/projects/sample1" },
               { title: "sample2", href: "#" },
@@ -372,12 +372,10 @@ export default function Home() {
               <Link 
                 key={i}
                 href={project.href}
-                className="group block"
-                data-testid={`project-card-${project.title}`}
+                className="block text-primary hover:underline decoration-1 underline-offset-4"
+                data-testid={`project-link-${project.title}`}
               >
-                <div className="aspect-[4/6] w-full border border-primary/20 bg-muted/30 flex items-center justify-center p-4 transition-all duration-300 group-hover:bg-muted/50 group-hover:border-primary/40">
-                  <span className="text-primary font-bold text-sm uppercase tracking-widest">{project.title}</span>
-                </div>
+                {project.title}
               </Link>
             ))}
           </div>
