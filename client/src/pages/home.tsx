@@ -165,7 +165,7 @@ export default function Home() {
             <a href="#about" className="hover:underline decoration-1 decoration-primary/50 text-primary font-medium">ABOUT</a>
             <a href="#clients" className="hover:underline decoration-1 decoration-primary/50 text-primary font-medium">CLIENTS</a>
             <a href="#shelf" className="hover:underline decoration-1 decoration-primary/50 text-primary font-medium">SHELF</a>
-            <a href="#shelf" onClick={(e) => { e.preventDefault(); setActiveTab("projects"); document.getElementById("shelf")?.scrollIntoView({ behavior: "smooth" }); }} className="hover:underline decoration-1 decoration-primary/50 text-primary font-medium">PROJECTS</a>
+            <a href="#shelf" onClick={(e) => { e.preventDefault(); setActiveTab("projects"); setTimeout(() => { const el = document.getElementById("shelf"); if (el) { const headerOffset = 80; const elementPosition = el.getBoundingClientRect().top; const offsetPosition = elementPosition + window.pageYOffset - headerOffset; window.scrollTo({ top: offsetPosition, behavior: "smooth" }); } }, 50); }} className="hover:underline decoration-1 decoration-primary/50 text-primary font-medium">PROJECTS</a>
           </nav>
         </div>
         
