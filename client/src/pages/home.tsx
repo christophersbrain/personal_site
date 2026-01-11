@@ -165,7 +165,7 @@ export default function Home() {
             <a href="#about" className="hover:underline decoration-1 decoration-primary/50 text-primary font-medium">ABOUT</a>
             <a href="#clients" className="hover:underline decoration-1 decoration-primary/50 text-primary font-medium">CLIENTS</a>
             <a href="#shelf" className="hover:underline decoration-1 decoration-primary/50 text-primary font-medium">SHELF</a>
-            <a href="#shelf" onClick={(e) => { e.preventDefault(); setActiveTab("projects"); setTimeout(() => { const el = document.getElementById("shelf"); if (el) { const headerOffset = 80; const elementPosition = el.getBoundingClientRect().top; const offsetPosition = elementPosition + window.pageYOffset - headerOffset; window.scrollTo({ top: offsetPosition, behavior: "smooth" }); } }, 50); }} className="hover:underline decoration-1 decoration-primary/50 text-primary font-medium">PROJECTS</a>
+            <a href="#projects" className="hover:underline decoration-1 decoration-primary/50 text-primary font-medium">PROJECTS</a>
           </nav>
         </div>
         
@@ -290,13 +290,7 @@ export default function Home() {
                  >
                    MOVIE SHELF
                  </TabsTrigger>
-                 <TabsTrigger 
-                   value="projects" 
-                   className="rounded-none bg-transparent p-0 pb-4 text-sm font-bold tracking-wider uppercase text-muted-foreground data-[state=active]:text-primary data-[state=active]:shadow-[0_2px_0_0_currentcolor]"
-                 >
-                   PROJECTS
-                 </TabsTrigger>
-               </TabsList>
+                </TabsList>
             </div>
 
             <div className="mb-8">
@@ -358,31 +352,35 @@ export default function Home() {
                </div>
             </TabsContent>
 
-            <TabsContent value="projects" className="mt-0">
-               <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
-                 {[
-                   { title: "sample1", color: "bg-rose-500", href: "/projects/sample1" },
-                   { title: "sample2", color: "bg-amber-500", href: "#" },
-                   { title: "sample3", color: "bg-emerald-500", href: "#" },
-                   { title: "sample4", color: "bg-sky-500", href: "#" },
-                   { title: "sample5", color: "bg-violet-500", href: "#" },
-                   { title: "sample6", color: "bg-slate-700", href: "#" },
-                 ].map((project, i) => (
-                   <Link 
-                     key={i}
-                     href={project.href}
-                     className="group block"
-                     data-testid={`project-card-${project.title}`}
-                   >
-                     <div className={`aspect-[4/6] w-full ${project.color} flex items-end justify-start p-4 transition-all duration-300 group-hover:opacity-90 group-hover:shadow-lg`}>
-                       <span className="text-white font-bold text-sm uppercase tracking-widest">{project.title}</span>
-                     </div>
-                   </Link>
-                 ))}
-               </div>
-            </TabsContent>
-
           </Tabs>
+        </section>
+
+        {/* --- Projects Section --- */}
+        <section id="projects" className="mb-24">
+          <h2 className="text-lg font-bold text-primary mb-8 border-b border-primary pb-4 uppercase tracking-wider">
+            PROJECTS
+          </h2>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+            {[
+              { title: "sample1", color: "bg-rose-500", href: "/projects/sample1" },
+              { title: "sample2", color: "bg-amber-500", href: "#" },
+              { title: "sample3", color: "bg-emerald-500", href: "#" },
+              { title: "sample4", color: "bg-sky-500", href: "#" },
+              { title: "sample5", color: "bg-violet-500", href: "#" },
+              { title: "sample6", color: "bg-slate-700", href: "#" },
+            ].map((project, i) => (
+              <Link 
+                key={i}
+                href={project.href}
+                className="group block"
+                data-testid={`project-card-${project.title}`}
+              >
+                <div className={`aspect-[4/6] w-full ${project.color} flex items-end justify-start p-4 transition-all duration-300 group-hover:opacity-90 group-hover:shadow-lg`}>
+                  <span className="text-white font-bold text-sm uppercase tracking-widest">{project.title}</span>
+                </div>
+              </Link>
+            ))}
+          </div>
         </section>
 
       </main>

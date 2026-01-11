@@ -12,7 +12,7 @@ export default function ProjectSample1() {
             <Link href="/#about" className="hover:underline decoration-1 decoration-primary/50 text-primary font-medium">ABOUT</Link>
             <Link href="/#clients" className="hover:underline decoration-1 decoration-primary/50 text-primary font-medium">CLIENTS</Link>
             <Link href="/#shelf" className="hover:underline decoration-1 decoration-primary/50 text-primary font-medium">SHELF</Link>
-            <Link href="/?tab=projects#shelf" className="hover:underline decoration-1 decoration-primary/50 text-primary font-medium">PROJECTS</Link>
+            <Link href="/#projects" className="hover:underline decoration-1 decoration-primary/50 text-primary font-medium">PROJECTS</Link>
           </nav>
         </div>
         
