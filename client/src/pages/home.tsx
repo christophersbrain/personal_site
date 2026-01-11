@@ -362,12 +362,12 @@ export default function Home() {
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
             {[
-              { title: "sample1", color: "bg-rose-500", href: "/projects/sample1" },
-              { title: "sample2", color: "bg-amber-500", href: "#" },
-              { title: "sample3", color: "bg-emerald-500", href: "#" },
-              { title: "sample4", color: "bg-sky-500", href: "#" },
-              { title: "sample5", color: "bg-violet-500", href: "#" },
-              { title: "sample6", color: "bg-slate-700", href: "#" },
+              { title: "sample1", href: "/projects/sample1" },
+              { title: "sample2", href: "#" },
+              { title: "sample3", href: "#" },
+              { title: "sample4", href: "#" },
+              { title: "sample5", href: "#" },
+              { title: "sample6", href: "#" },
             ].map((project, i) => (
               <Link 
                 key={i}
@@ -375,8 +375,8 @@ export default function Home() {
                 className="group block"
                 data-testid={`project-card-${project.title}`}
               >
-                <div className={`aspect-[4/6] w-full ${project.color} flex items-end justify-start p-4 transition-all duration-300 group-hover:opacity-90 group-hover:shadow-lg`}>
-                  <span className="text-white font-bold text-sm uppercase tracking-widest">{project.title}</span>
+                <div className="aspect-[4/6] w-full border border-primary/20 bg-muted/30 flex items-center justify-center p-4 transition-all duration-300 group-hover:bg-muted/50 group-hover:border-primary/40">
+                  <span className="text-primary font-bold text-sm uppercase tracking-widest">{project.title}</span>
                 </div>
               </Link>
             ))}
