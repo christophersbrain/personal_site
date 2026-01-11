@@ -348,8 +348,26 @@ export default function Home() {
             </TabsContent>
 
             <TabsContent value="projects" className="mt-0">
-               <div className="h-64 flex items-center justify-center border border-dashed border-primary/20 text-muted-foreground text-sm uppercase tracking-widest">
-                 Projects content goes here
+               <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+                 {[
+                   { title: "sample1", color: "bg-rose-500" },
+                   { title: "sample2", color: "bg-amber-500" },
+                   { title: "sample3", color: "bg-emerald-500" },
+                   { title: "sample4", color: "bg-sky-500" },
+                   { title: "sample5", color: "bg-violet-500" },
+                   { title: "sample6", color: "bg-slate-700" },
+                 ].map((project, i) => (
+                   <a 
+                     key={i}
+                     href="#"
+                     className="group block"
+                     data-testid={`project-card-${project.title}`}
+                   >
+                     <div className={`aspect-[4/6] w-full ${project.color} flex items-end justify-start p-4 transition-all duration-300 group-hover:opacity-90 group-hover:shadow-lg`}>
+                       <span className="text-white font-bold text-sm uppercase tracking-widest">{project.title}</span>
+                     </div>
+                   </a>
+                 ))}
                </div>
             </TabsContent>
 
