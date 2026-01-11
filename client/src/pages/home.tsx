@@ -154,7 +154,7 @@ export default function Home() {
             <a href="#about" className="hover:underline decoration-1 decoration-primary/50 text-primary font-medium">ABOUT</a>
             <a href="#clients" className="hover:underline decoration-1 decoration-primary/50 text-primary font-medium">CLIENTS</a>
             <a href="#shelf" className="hover:underline decoration-1 decoration-primary/50 text-primary font-medium">SHELF</a>
-            <a href="#projects" className="hover:underline decoration-1 decoration-primary/50 text-primary font-medium">PROJECTS</a>
+            <a href="#shelf" className="hover:underline decoration-1 decoration-primary/50 text-primary font-medium">PROJECTS</a>
           </nav>
         </div>
         
@@ -280,10 +280,10 @@ export default function Home() {
                    MOVIE SHELF
                  </TabsTrigger>
                  <TabsTrigger 
-                   value="essays" 
+                   value="projects" 
                    className="rounded-none bg-transparent p-0 pb-4 text-sm font-bold tracking-wider uppercase text-muted-foreground data-[state=active]:text-primary data-[state=active]:shadow-[0_2px_0_0_currentcolor]"
                  >
-                   ESSAYS
+                   PROJECTS
                  </TabsTrigger>
                </TabsList>
             </div>
@@ -347,9 +347,9 @@ export default function Home() {
                </div>
             </TabsContent>
 
-            <TabsContent value="essays" className="mt-0">
+            <TabsContent value="projects" className="mt-0">
                <div className="h-64 flex items-center justify-center border border-dashed border-primary/20 text-muted-foreground text-sm uppercase tracking-widest">
-                 Essays content goes here
+                 Projects content goes here
                </div>
             </TabsContent>
 
