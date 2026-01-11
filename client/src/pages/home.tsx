@@ -154,7 +154,7 @@ export default function Home() {
             <a href="#about" className="hover:underline decoration-1 decoration-primary/50 text-primary font-medium">ABOUT</a>
             <a href="#clients" className="hover:underline decoration-1 decoration-primary/50 text-primary font-medium">CLIENTS</a>
             <a href="#shelf" className="hover:underline decoration-1 decoration-primary/50 text-primary font-medium">SHELF</a>
-            <a href="#shelf" className="hover:underline decoration-1 decoration-primary/50 text-primary font-medium">PROJECTS</a>
+            <a href="#shelf" onClick={() => setActiveTab("projects")} className="hover:underline decoration-1 decoration-primary/50 text-primary font-medium">PROJECTS</a>
           </nav>
         </div>
         
