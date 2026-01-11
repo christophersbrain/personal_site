@@ -28,7 +28,7 @@ export const CLIENT_ITEMS = [
   { title: "Advisor", source: "Everybody Eats", year: "2021 - Present", logo: "/assets/logos/everybodyeat.png" },
   { title: "Fractional CFO", source: "Brighter Electrical", year: "2022 - 2023", logo: "/assets/logos/brighter.png" },
   { title: "Fractional CFO", source: "Black Court", year: "2022 - 2023", logo: "/assets/logos/blackcourt.png" },
-  { title: "Head of Finance and Operations", source: "Jet Protocol", year: "2020 - 2022", logo: "/assets/logos/jet.png" }
+  { title: "Head of Finance and Operations", source: "Jet Protocol", year: "2021 - 2022", logo: "/assets/logos/jet.png" }
 ];
 
 export const BOOKS = [
