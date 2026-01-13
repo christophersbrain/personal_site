@@ -179,11 +179,11 @@ export default function Home() {
         
         {/* --- Hero Image --- */}
         <section className="mb-20 mt-8">
-          <div className="aspect-[16/9] w-full overflow-hidden bg-muted">
+          <div className="w-full overflow-hidden bg-muted">
              <img 
                src={heroImage} 
                alt="Desk Setup" 
-               className="w-full h-full object-cover object-[center_10%] grayscale-[20%] hover:grayscale-0 transition-all duration-700"
+               className="w-full h-auto grayscale-[20%] hover:grayscale-0 transition-all duration-700"
              />
           </div>
         </section>
