@@ -240,7 +240,7 @@ export default function Home() {
              
              <div className="divide-y divide-primary/10 divide-dashed">
                {CLIENT_ITEMS.map((item, i) => (
-                 <div key={i} className="group cursor-pointer py-6">
+                 <div key={i} className="group cursor-pointer py-5">
                    <div className="flex justify-between items-center gap-4">
                      <div>
                        <h3 className="text-lg decoration-1 underline-offset-4 group-hover:underline text-primary mb-1">
