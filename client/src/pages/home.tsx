@@ -32,19 +32,40 @@ const BookCard = ({ book }: { book: typeof BOOKS[0] }) => {
     return colors[Math.abs(hash) % colors.length];
   }, [book.title]);
 
-  const handleImageError = () => {
-    // Try to recover if it's an OpenLibrary URL with an ISBN
-    if (retryCount === 0 && imgSrc.includes("covers.openlibrary.org/b/isbn/")) {
-      const isbnMatch = imgSrc.match(/isbn\/(\d+)/);
-      if (isbnMatch && isbnMatch[1]) {
-        // Try Amazon as fallback (works best with ISBN-10, but we can try ISBN-13 too)
-        // Convert to ISBN-10 if possible? Or just try directly.
-        // Amazon image pattern: https://images-na.ssl-images-amazon.com/images/P/[ISBN].01.LZZZZZZZ.jpg
-        setImgSrc(`https://images-na.ssl-images-amazon.com/images/P/${isbnMatch[1]}.01.LZZZZZZZ.jpg`);
-        setRetryCount(1);
-        return;
-      }
+  const handleImageLoad = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
+    const img = e.currentTarget;
+    if (img.naturalWidth === 1) {
+      // Treat 1x1 images (tracking pixels/placeholders) as errors
+      handleImageError();
+    } else {
+      setImageLoaded(true);
     }
+  };
+
+  const handleImageError = () => {
+    // Try to recover using ISBN if we have it
+    // We can extract ISBN from the original book.cover if it's an OpenLibrary URL
+    let isbn = null;
+    if (book.cover.includes("covers.openlibrary.org/b/isbn/")) {
+       const match = book.cover.match(/isbn\/(\d+)/);
+       if (match) isbn = match[1];
+    }
+    
+    if (isbn) {
+       if (retryCount === 0) {
+         // Try Amazon (standard ISBN endpoint)
+         setImgSrc(`https://images-na.ssl-images-amazon.com/images/P/${isbn}.01.LZZZZZZZ.jpg`);
+         setRetryCount(1);
+         return;
+       } 
+       if (retryCount === 1) {
+         // Try Google Books as last resort
+         setImgSrc(`https://books.google.com/books?vid=ISBN${isbn}&printsec=frontcover&img=1`);
+         setRetryCount(2);
+         return;
+       }
+    }
+    
     setImageError(true);
   };
 
@@ -79,7 +100,7 @@ const BookCard = ({ book }: { book: typeof BOOKS[0] }) => {
                 imageLoaded ? "opacity-100" : "opacity-0"
               )}
               loading="lazy"
-              onLoad={() => setImageLoaded(true)}
+              onLoad={handleImageLoad}
               onError={handleImageError}
             />
           )}
