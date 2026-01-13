@@ -1,22 +1,20 @@
 export const NOW_ITEMS = [
-  "thinking deeply about social and storytelling at Base",
-  "building Noun, a coffee and wine bar in LA"
+  "fractional cfo for high profile crypto projects",
+  "ambassador to Pear Protocol"
 ];
 
 export const PREVIOUSLY_ITEMS = [
-  "contributed to membership models of FWB",
-  "fostered partnerships with Gitcoin",
-  "pioneered a better decentralized web w/ Aave",
-  "cultivated community for Unsplash and Creative Market"
+  "led finance at polymarket for 18 months as fractional cfo",
+  "director of partnerships at flipside",
+  "director of finance at jet protocol (solana defi)",
+  "on-chain prop trading (spot, perps, & prediction markets)"
 ];
 
 export const LORE_ITEMS = [
-  "picked up 50k followers on tiktok and diverted the crowd into watching me assemble a coffee and wine bar in LA",
-  "passed prop 450 in NounsDAO, 78 votes for and 32 against",
-  "posted about HyperCard so much that I accidentally got Kevin Kelly to upload the Whole Earth Catalog to archive.org",
-  "shared some bad outer space news about a falling rocket (10M views)",
-  "tweeted a sushi plate video that Patton Oswalt called \"simple and perfect\" (26M views,)",
-  "made a series of YouTube videos about Roam Research"
+  "tokenomics get me going",
+  "adrenaline junkie",
+  "active in chicago crypto community",
+  "genunely believes crypto will save humans from ourselves"
 ];
 
 export const CLIENT_ITEMS = [
