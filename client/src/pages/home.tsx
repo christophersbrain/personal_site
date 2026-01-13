@@ -203,7 +203,7 @@ export default function Home() {
                  {NOW_ITEMS.map((item, i) => (
                    <li key={i} className="flex gap-3 text-sm leading-relaxed">
                      <span className="text-primary">-</span>
-                     <span>{item.replace("Base", "")} <span className="underline decoration-1">Base</span></span> 
+                     <span>{item}</span> 
                    </li>
                  ))}
                </ul>
