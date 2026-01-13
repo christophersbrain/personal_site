@@ -13,6 +13,40 @@ import { Heart } from "lucide-react";
 const BookCard = ({ book }: { book: typeof BOOKS[0] }) => {
   const [imageError, setImageError] = useState(false);
   const [imageLoaded, setImageLoaded] = useState(false);
+  const [imgSrc, setImgSrc] = useState(book.cover);
+  const [retryCount, setRetryCount] = useState(0);
+
+  // Generate a consistent color based on book title
+  const bookColor = useMemo(() => {
+    const colors = [
+      "bg-red-700", "bg-orange-700", "bg-amber-700", "bg-yellow-700", 
+      "bg-lime-700", "bg-green-700", "bg-emerald-700", "bg-teal-700", 
+      "bg-cyan-700", "bg-sky-700", "bg-blue-700", "bg-indigo-700", 
+      "bg-violet-700", "bg-purple-700", "bg-fuchsia-700", "bg-pink-700", 
+      "bg-rose-700", "bg-slate-600", "bg-stone-600", "bg-zinc-600"
+    ];
+    let hash = 0;
+    for (let i = 0; i < book.title.length; i++) {
+      hash = book.title.charCodeAt(i) + ((hash << 5) - hash);
+    }
+    return colors[Math.abs(hash) % colors.length];
+  }, [book.title]);
+
+  const handleImageError = () => {
+    // Try to recover if it's an OpenLibrary URL with an ISBN
+    if (retryCount === 0 && imgSrc.includes("covers.openlibrary.org/b/isbn/")) {
+      const isbnMatch = imgSrc.match(/isbn\/(\d+)/);
+      if (isbnMatch && isbnMatch[1]) {
+        // Try Amazon as fallback (works best with ISBN-10, but we can try ISBN-13 too)
+        // Convert to ISBN-10 if possible? Or just try directly.
+        // Amazon image pattern: https://images-na.ssl-images-amazon.com/images/P/[ISBN].01.LZZZZZZZ.jpg
+        setImgSrc(`https://images-na.ssl-images-amazon.com/images/P/${isbnMatch[1]}.01.LZZZZZZZ.jpg`);
+        setRetryCount(1);
+        return;
+      }
+    }
+    setImageError(true);
+  };
 
   return (
   <Dialog>
@@ -29,13 +63,16 @@ const BookCard = ({ book }: { book: typeof BOOKS[0] }) => {
 
           {/* Fallback for Error */}
           {imageError ? (
-            <div className="absolute inset-0 bg-muted flex flex-col items-center justify-center p-4 text-center">
-               <span className="text-xs font-bold text-muted-foreground uppercase tracking-widest line-clamp-3">{book.title}</span>
-               <span className="text-[10px] text-muted-foreground/60 mt-2 uppercase tracking-widest line-clamp-2">{book.author}</span>
+            <div className={`absolute inset-0 ${bookColor} flex flex-col items-center justify-center p-4 text-center text-white/90`}>
+               <div className="border-2 border-white/20 p-2 w-full h-full flex flex-col items-center justify-center">
+                 <h3 className="text-xs font-bold uppercase tracking-widest line-clamp-4 leading-relaxed">{book.title}</h3>
+                 <div className="w-8 h-px bg-white/40 my-3"></div>
+                 <span className="text-[10px] uppercase tracking-widest line-clamp-2 opacity-80">{book.author}</span>
+               </div>
             </div>
           ) : (
             <img 
-              src={book.cover} 
+              src={imgSrc} 
               alt={book.title} 
               className={cn(
                 "h-full w-full object-cover transition-opacity duration-500",
@@ -43,7 +80,7 @@ const BookCard = ({ book }: { book: typeof BOOKS[0] }) => {
               )}
               loading="lazy"
               onLoad={() => setImageLoaded(true)}
-              onError={() => setImageError(true)}
+              onError={handleImageError}
             />
           )}
 
@@ -66,13 +103,14 @@ const BookCard = ({ book }: { book: typeof BOOKS[0] }) => {
         <div className="p-8 md:p-12 flex items-center justify-center bg-muted/30">
            <div className="aspect-[2/3] w-2/3 shadow-2xl relative bg-muted">
               {imageError ? (
-                <div className="w-full h-full flex flex-col items-center justify-center p-8 text-center border border-black/5 bg-background">
-                   <h3 className="text-xl font-bold uppercase tracking-wide text-primary mb-2">{book.title}</h3>
-                   <p className="text-sm text-muted-foreground font-medium tracking-widest uppercase">{book.author}</p>
+                <div className={`w-full h-full flex flex-col items-center justify-center p-8 text-center border border-black/5 ${bookColor} text-white`}>
+                   <h3 className="text-xl font-bold uppercase tracking-wide mb-4">{book.title}</h3>
+                   <div className="w-12 h-px bg-white/40 mb-4"></div>
+                   <p className="text-sm font-medium tracking-widest uppercase opacity-90">{book.author}</p>
                 </div>
               ) : (
                 <img 
-                  src={book.cover} 
+                  src={imgSrc} 
                   alt={book.title} 
                   className="h-full w-full object-cover"
                 />
