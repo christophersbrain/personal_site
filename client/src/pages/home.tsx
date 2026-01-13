@@ -51,6 +51,14 @@ const BookCard = ({ book }: { book: typeof BOOKS[0] }) => {
        if (match) isbn = match[1];
     }
     
+    // Attempt to extract ISBN from Amazon URL if present (10-digit ASIN is often the ISBN-10)
+    // Amazon URL pattern: https://m.media-amazon.com/images/I/[ID].jpg (This is an internal ID, not ISBN)
+    // But sometimes people use https://images-na.ssl-images-amazon.com/images/P/[ISBN].01...
+    if (!isbn && book.cover.includes("/images/P/")) {
+       const match = book.cover.match(/\/images\/P\/([a-zA-Z0-9]+)\./);
+       if (match) isbn = match[1];
+    }
+    
     if (isbn) {
        if (retryCount === 0) {
          // Try Amazon (standard ISBN endpoint)
@@ -65,6 +73,11 @@ const BookCard = ({ book }: { book: typeof BOOKS[0] }) => {
          return;
        }
     }
+    
+    // If it's a generic "image not available" from Amazon, we want to force fallback
+    // But we can't easily detect the content. 
+    // However, if we've already tried Amazon and failed (or it was the original source and we are here),
+    // and we don't have an ISBN to try elsewhere, we should just show the nice fallback.
     
     setImageError(true);
   };
