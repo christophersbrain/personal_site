@@ -3,7 +3,7 @@ import { Link } from "wouter";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { Input } from "@/components/ui/input";
-import heroImage from "@assets/unnamed_1768325247370.jpg";
+import heroImage from "@assets/unnamed_1768325434712.jpg";
 import { cn } from "@/lib/utils";
 import { NOW_ITEMS, PREVIOUSLY_ITEMS, LORE_ITEMS, CLIENT_ITEMS, BOOKS } from "@/data";
 import { Heart } from "lucide-react";
