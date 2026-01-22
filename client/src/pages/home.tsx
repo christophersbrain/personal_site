@@ -7,6 +7,7 @@ import heroImage from "@assets/unnamed_1768325434712.jpg";
 import { cn } from "@/lib/utils";
 import { NOW_ITEMS, PREVIOUSLY_ITEMS, LORE_ITEMS, CLIENT_ITEMS, BOOKS } from "@/data";
 import { Heart } from "lucide-react";
+import { CryptoChartCard } from "@/components/crypto-chart";
 
 // --- Components ---
 
@@ -421,23 +422,21 @@ export default function Home() {
           <h2 className="text-lg font-bold text-primary mb-8 border-b border-primary pb-4 uppercase tracking-wider">
             PROJECTS
           </h2>
-          <div className="space-y-2">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { title: "sample1", href: "/projects/sample1" },
-              { title: "sample2", href: "#" },
-              { title: "sample3", href: "#" },
-              { title: "sample4", href: "#" },
-              { title: "sample5", href: "#" },
-              { title: "sample6", href: "#" },
-            ].map((project, i) => (
-              <Link 
-                key={i}
-                href={project.href}
-                className="block text-primary hover:underline decoration-1 underline-offset-4"
-                data-testid={`project-link-${project.title}`}
-              >
-                {project.title}
-              </Link>
+              { id: "bitcoin", symbol: "BTC", name: "Bitcoin" },
+              { id: "ethereum", symbol: "ETH", name: "Ethereum" },
+              { id: "solana", symbol: "SOL", name: "Solana" },
+              { id: "pepe", symbol: "PEPE", name: "Pepe" },
+              { id: "dogecoin", symbol: "DOGE", name: "Dogecoin" },
+              { id: "uniswap", symbol: "UNI", name: "Uniswap" },
+            ].map((coin) => (
+              <CryptoChartCard 
+                key={coin.id}
+                id={coin.id}
+                symbol={coin.symbol}
+                name={coin.name}
+              />
             ))}
           </div>
         </section>
