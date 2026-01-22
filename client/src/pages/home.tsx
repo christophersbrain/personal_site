@@ -293,17 +293,6 @@ export default function Home() {
                </ul>
             </div>
 
-            <div className="space-y-4">
-               <h3 className="text-muted-foreground text-xs uppercase tracking-widest mb-4">//LORE//</h3>
-               <ul className="space-y-3">
-                 {LORE_ITEMS.map((item, i) => (
-                   <li key={i} className="flex gap-3 text-sm leading-relaxed">
-                     <span className="text-primary">-</span>
-                     {item}
-                   </li>
-                 ))}
-               </ul>
-            </div>
           </div>
 
           {/* Right Col: Clients */}
