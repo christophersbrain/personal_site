@@ -6,7 +6,6 @@ export const NOW_ITEMS = [
 ];
 
 export const PREVIOUSLY_ITEMS = [
-  "on chain maxi"
 ];
 
 export const LORE_ITEMS = [
