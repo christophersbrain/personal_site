@@ -13,11 +13,10 @@ export const PREVIOUSLY_ITEMS = [
   "on chain since 2014"
 ];
 
-export const LORE_ITEMS = [
-  "tokenomics get me going",
-  "adrenaline junkie",
-  "active in chicago crypto community",
-  "genunely believes crypto will save humans from ourselves"
+export const TIDBITS_ITEMS = [
+  "btc, sol, and hype stan",
+  "on-chain looper, carry tradooor, and dex degen",
+  "purveyor of revenue accruing"
 ];
 
 export const CLIENT_ITEMS = [

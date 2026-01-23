@@ -5,7 +5,7 @@ import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { Input } from "@/components/ui/input";
 import heroImage from "@assets/unnamed_1768325434712.jpg";
 import { cn } from "@/lib/utils";
-import { NOW_ITEMS, PREVIOUSLY_ITEMS, LORE_ITEMS, CLIENT_ITEMS, BOOKS } from "@/data";
+import { NOW_ITEMS, PREVIOUSLY_ITEMS, TIDBITS_ITEMS, CLIENT_ITEMS, BOOKS } from "@/data";
 import { Heart } from "lucide-react";
 import { CryptoChartCard } from "@/components/crypto-chart";
 
@@ -286,9 +286,17 @@ export default function Home() {
                </ul>
             </div>
 
-          </div>
-
-          {/* Right Col: Clients */}
+            <div className="space-y-4">
+               <h3 className="text-muted-foreground text-xs uppercase tracking-widest mb-4">//OTHER TIDBITS//</h3>
+               <ul className="space-y-3">
+                 {TIDBITS_ITEMS.map((item, i) => (
+                   <li key={i} className="flex gap-3 text-sm leading-relaxed">
+                     <span className="text-primary">-</span>
+                     <span>{item}</span>
+                   </li>
+                 ))}
+               </ul>
+            </div>
           <div id="clients">
              <h2 className="text-sm font-bold tracking-wider uppercase mb-0 text-primary border-b border-primary/20 pb-2">CLIENTS</h2>
              
