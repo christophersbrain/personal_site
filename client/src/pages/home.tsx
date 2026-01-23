@@ -234,12 +234,6 @@ export default function Home() {
         <div className="flex flex-col md:flex-row md:items-baseline gap-6 md:gap-12">
           <h1 className="text-lg font-bold tracking-tight text-primary">CHRIS WHITE</h1>
           
-          <nav className="flex gap-6 text-sm underline-offset-4">
-            <a href="#about" className="hover:underline decoration-1 decoration-primary/50 text-primary font-medium">ABOUT</a>
-            <a href="#clients" className="hover:underline decoration-1 decoration-primary/50 text-primary font-medium">CLIENTS</a>
-            <a href="#shelf" className="hover:underline decoration-1 decoration-primary/50 text-primary font-medium">SHELF</a>
-            <a href="#projects" className="hover:underline decoration-1 decoration-primary/50 text-primary font-medium">PROJECTS</a>
-          </nav>
         </div>
         
         {/* The Box with Asterisk */}
