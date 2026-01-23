@@ -235,9 +235,13 @@ export default function Home() {
            <h1 className="text-lg font-bold tracking-tight text-primary">CHRIS WHITE</h1>
         </div>
         
-        {/* The Box with Asterisk */}
-        <div className="border border-primary w-10 h-10 flex items-center justify-center text-primary hover:bg-primary hover:text-background transition-colors cursor-pointer">
-          <span className="text-2xl leading-none pt-2">*</span>
+        {/* The Box with Asterisk - now replaced by Avatar */}
+        <div className="border border-primary w-10 h-10 flex items-center justify-center text-primary overflow-hidden">
+          <img 
+            src="/assets/chris-avatar.png" 
+            alt="Chris" 
+            className="w-full h-full object-cover" 
+          />
         </div>
       </header>
 
