@@ -1,11 +1,11 @@
 export const NOW_ITEMS = [
   "crypto fractional cfo & coo",
   "ambassador to Pear Protocol",
-  "I like numbers, and use them to solve problems and build things"
+  "I like numbers, and use them to solve problems and build things",
+  "everything on chain"
 ];
 
 export const PREVIOUSLY_ITEMS = [
-  "director of finance at jet protocol",
   "on chain maxi"
 ];
 
