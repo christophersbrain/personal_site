@@ -232,8 +232,10 @@ export default function Home() {
       {/* --- Header --- */}
       <header className="sticky top-0 z-50 w-full bg-background/95 backdrop-blur-sm pt-8 pb-4 px-6 md:px-12 flex items-start justify-between">
         <div className="flex flex-col md:flex-row md:items-baseline gap-6 md:gap-12">
-          <h1 className="text-lg font-bold tracking-tight text-primary">CHRIS WHITE</h1>
-          
+          <div className="flex items-center gap-3">
+             <img src="/assets/chris-avatar.png" alt="Chris" className="w-8 h-8 object-contain" />
+             <h1 className="text-lg font-bold tracking-tight text-primary">CHRIS WHITE</h1>
+          </div>
         </div>
         
         {/* The Box with Asterisk */}
@@ -437,14 +439,6 @@ export default function Home() {
 
       </main>
 
-      {/* Bottom Avatar */}
-      <div className="w-full flex justify-center pb-12 pt-12">
-        <img 
-          src="/assets/chris-avatar.png" 
-          alt="Chris" 
-          className="w-32 h-32 object-contain hover:scale-105 transition-transform duration-300" 
-        />
-      </div>
 
       <footer className="px-6 md:px-12 py-12 border-t border-primary/10">
          <div className="flex justify-between items-center text-xs uppercase tracking-widest text-muted-foreground">
