@@ -232,9 +232,9 @@ export default function Home() {
       {/* --- Header --- */}
       <header className="sticky top-0 z-50 w-full bg-background/95 backdrop-blur-sm pt-8 pb-4 px-6 md:px-12 flex items-start justify-between">
         <div className="flex flex-col md:flex-row md:items-baseline gap-6 md:gap-12">
-           <h1 className="text-lg font-bold tracking-tight text-primary flex flex-col leading-none">
-             <span>CHRIS</span>
-             <span>WHITE</span>
+           <h1 className="text-lg font-bold tracking-tight text-primary flex flex-col leading-none items-center">
+             <span>chris</span>
+             <span>white</span>
            </h1>
         </div>
         
