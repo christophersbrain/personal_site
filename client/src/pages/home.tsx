@@ -230,9 +230,9 @@ export default function Home() {
     <div className="min-h-screen bg-background text-foreground font-mono selection:bg-primary/20">
       
       {/* --- Header --- */}
-      <header className="sticky top-0 z-50 w-full bg-background/95 backdrop-blur-sm pt-8 pb-4 px-6 md:px-12 flex items-start justify-between">
+      <header className="sticky top-0 z-50 w-full bg-background/95 backdrop-blur-sm pt-8 pb-4 px-6 md:px-12 flex items-start justify-center">
         <div className="flex flex-col md:flex-row md:items-baseline gap-6 md:gap-12">
-           <h1 className="text-lg font-bold tracking-tight text-primary flex flex-col leading-none items-center">
+           <h1 className="text-lg font-bold tracking-tight text-primary flex flex-col leading-none items-center text-center">
              <span>chris</span>
              <span>white</span>
            </h1>
