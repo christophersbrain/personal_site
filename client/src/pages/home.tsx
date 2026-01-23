@@ -449,6 +449,15 @@ export default function Home() {
            <span>Made with Replit</span>
          </div>
       </footer>
+      
+      {/* Bottom Avatar */}
+      <div className="w-full flex justify-center pb-24">
+        <img 
+          src="/assets/chris-avatar.png" 
+          alt="Chris" 
+          className="w-32 h-32 object-contain hover:scale-105 transition-transform duration-300" 
+        />
+      </div>
     </div>
   );
 }
