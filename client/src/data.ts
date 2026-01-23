@@ -5,10 +5,8 @@ export const NOW_ITEMS = [
 ];
 
 export const PREVIOUSLY_ITEMS = [
-  "led finance at polymarket for 18 months as fractional cfo",
-  "director of partnerships at flipside",
-  "director of finance at jet protocol (solana defi)",
-  "on-chain prop trading (spot, perps, & prediction markets)"
+  "director of finance at jet protocol",
+  "on chain maxi"
 ];
 
 export const LORE_ITEMS = [
