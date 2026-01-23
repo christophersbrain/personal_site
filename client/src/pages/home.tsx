@@ -443,21 +443,21 @@ export default function Home() {
 
       </main>
 
-      <footer className="px-6 md:px-12 py-12 border-t border-primary/10">
-         <div className="flex justify-between items-center text-xs uppercase tracking-widest text-muted-foreground">
-           <span>© 2025 Chris White</span>
-           <span>Made with Replit</span>
-         </div>
-      </footer>
-      
       {/* Bottom Avatar */}
-      <div className="w-full flex justify-center pb-24">
+      <div className="w-full flex justify-center pb-12 pt-12">
         <img 
           src="/assets/chris-avatar.png" 
           alt="Chris" 
           className="w-32 h-32 object-contain hover:scale-105 transition-transform duration-300" 
         />
       </div>
+
+      <footer className="px-6 md:px-12 py-12 border-t border-primary/10">
+         <div className="flex justify-between items-center text-xs uppercase tracking-widest text-muted-foreground">
+           <span>© 2025 Chris White</span>
+           <span>Made with Replit</span>
+         </div>
+      </footer>
     </div>
   );
 }
