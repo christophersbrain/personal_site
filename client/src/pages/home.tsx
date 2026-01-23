@@ -236,7 +236,7 @@ export default function Home() {
         </div>
         
         {/* The Box with Asterisk - now replaced by Avatar */}
-        <div className="border border-primary w-10 h-10 flex items-center justify-center text-primary overflow-hidden">
+        <div className="border border-primary w-[52px] h-[52px] flex items-center justify-center text-primary overflow-hidden">
           <img 
             src="/assets/chris-avatar.png" 
             alt="Chris" 
