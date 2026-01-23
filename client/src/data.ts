@@ -16,7 +16,7 @@ export const PREVIOUSLY_ITEMS = [
 export const TIDBITS_ITEMS = [
   "btc, sol, and hype stan",
   "on-chain looper, carry tradooor, and dex degen",
-  "purveyor of revenue accruing"
+  "purveyor of revenue & clean tokenomics"
 ];
 
 export const CLIENT_ITEMS = [
