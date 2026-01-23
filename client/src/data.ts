@@ -295,14 +295,6 @@ export const BOOKS = [
     "liked": false
   },
   {
-    "id": 34,
-    "title": "Untamed",
-    "author": "Glennon Doyle",
-    "year": "2020",
-    "cover": "https://covers.openlibrary.org/b/isbn/9781984801258-M.jpg?default=false",
-    "liked": false
-  },
-  {
     "id": 35,
     "title": "Red Notice",
     "author": "Bill Browder",
