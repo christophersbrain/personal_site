@@ -297,6 +297,9 @@ export default function Home() {
                  ))}
                </ul>
             </div>
+          </div>
+
+          {/* Right Col: Clients */}
           <div id="clients">
              <h2 className="text-sm font-bold tracking-wider uppercase mb-0 text-primary border-b border-primary/20 pb-2">CLIENTS</h2>
              
