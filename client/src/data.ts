@@ -6,9 +6,9 @@ export const NOW_ITEMS = [
 ];
 
 export const PREVIOUSLY_ITEMS = [
-  "five years long/short equity & macro hedge fund research",
-  "four years healthcare m&a",
-  "two years vc investing",
+  "long/short equity & macro hedge fund research",
+  "healthcare m&a",
+  "vc investing",
   "full time crypto since 2021",
   "on chain since 2014"
 ];
