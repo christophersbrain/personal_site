@@ -1,7 +1,7 @@
 export const NOW_ITEMS = [
   "crypto fractional cfo & coo",
   "ambassador to Pear Protocol",
-  "good with numbers and setting up ai bots",
+  "good with numbers and setting up bots",
   "everything on chain"
 ];
 
