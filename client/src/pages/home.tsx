@@ -35,8 +35,10 @@ const BookCard = ({ book }: { book: typeof BOOKS[0] }) => {
 
   const handleImageLoad = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
     const img = e.currentTarget;
-    if (img.naturalWidth === 1) {
-      // Treat 1x1 images (tracking pixels/placeholders) as errors
+    const w = img.naturalWidth;
+    const h = img.naturalHeight;
+    const ratio = h / w;
+    if (w <= 1 || ratio < 1.1 || (w < 50 && h < 50)) {
       handleImageError();
     } else {
       setImageLoaded(true);
